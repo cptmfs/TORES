@@ -59,6 +59,7 @@
             this.pnlRoomList.Size = new System.Drawing.Size(429, 153);
             this.pnlRoomList.TabIndex = 0;
             this.pnlRoomList.Click += new System.EventHandler(this.pnlRoomList_Click_1);
+            this.pnlRoomList.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlRoomList_Paint);
             // 
             // label1
             // 

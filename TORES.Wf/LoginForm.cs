@@ -53,7 +53,6 @@ namespace TORES.Wf
                 UserPanelForm user = new UserPanelForm();
                 user.userid= id;
                 user.ShowDialog();
-                this.Close();
 
             }
             else

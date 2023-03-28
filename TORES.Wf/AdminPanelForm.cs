@@ -72,7 +72,9 @@ namespace TORES.Wf
             lblusID.Text=userId.ToString();
         }
 
-        private void pnlMeetRooms_Paint(object sender, PaintEventArgs e)
+
+
+        private void pnlRoomList_Paint(object sender, PaintEventArgs e)
         {
 
         }
