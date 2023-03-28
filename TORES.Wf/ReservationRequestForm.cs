@@ -89,15 +89,27 @@ namespace TORES.Wf
 
 
 
-            BindDateTime(dtpMeetingDate.Checked.ToString(),cbxMeetingStart.SelectedItem.ToString());
 
             lblId.Text = userId.ToString();
             
         }
 
+        #region tarih karşılaştırma
+        /* datReservation'dan toplantı başlangıç ve bitiş tarihleri alınacak
+         * bunlar bir tabloda tutulacak
+         * seçilmiş olan başlangıç ve bitiş tarih+saat BindDateTime() ile birleşecek 
+         * bunlar serverdan gelen tarih tablosuyla kıyaslanacak 
+         * string olarak tutulan tarih bilgisinin birbirine eşitliği kontrol edilecek
+         * eşitse o tarih dolu uyarısı verilecek
+         
+         
+         */
+        #endregion
+
+
         private string BindDateTime(string date,string time)
         {
-            // burada amacım gelen tarih ve saat bilgilerini birleştirmek. Format -> (YYYYAAGGSSDD)
+            // burada amacım gelen tarih ve saat bilgilerini birleştirmek. Format -> (GGAAYYYYSSDD)
 
             date  = dtpMeetingDate.Text  ;   // dtpMeetingDate teki tarihi string olarak aldım
             
@@ -111,7 +123,7 @@ namespace TORES.Wf
                 }
 
             }
-            for (int i = 0; i < time.Length; i++)
+            for (int i = 0; i < time.Length; i++) // cboxdaki saatdeğerlerinin arasındaki ':' i kaldırmak
             {
 
                 if (time[i] != ':')
