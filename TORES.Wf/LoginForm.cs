@@ -51,8 +51,8 @@ namespace TORES.Wf
                     admin.ShowDialog();
                 }
                 UserPanelForm user = new UserPanelForm();
+                user.userid= id;
                 user.ShowDialog();
-                this.Close();
 
             }
             else
@@ -65,6 +65,7 @@ namespace TORES.Wf
             }
             connection.Close();
         }
+
 
         private void LogMsg()// SQL den aldığımız komutlar ile kullanıcı isimlerini parametrelere çevirerek veri tabanına işledik.
         {
