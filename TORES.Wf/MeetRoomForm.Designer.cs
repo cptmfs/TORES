@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nudRoomCapacity = new System.Windows.Forms.NumericUpDown();
             this.grpProperty = new System.Windows.Forms.GroupBox();
+            this.chckbKlima = new System.Windows.Forms.CheckBox();
             this.cbxMeetRoom = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.logKayıtlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnGetir = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMeetRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomCapacity)).BeginInit();
             this.grpProperty.SuspendLayout();
@@ -78,7 +78,7 @@
             // btnRequest
             // 
             this.btnRequest.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRequest.Location = new System.Drawing.Point(344, 342);
+            this.btnRequest.Location = new System.Drawing.Point(344, 371);
             this.btnRequest.Name = "btnRequest";
             this.btnRequest.Size = new System.Drawing.Size(101, 54);
             this.btnRequest.TabIndex = 12;
@@ -89,7 +89,7 @@
             // chckbVOIP
             // 
             this.chckbVOIP.AutoSize = true;
-            this.chckbVOIP.Location = new System.Drawing.Point(39, 177);
+            this.chckbVOIP.Location = new System.Drawing.Point(28, 177);
             this.chckbVOIP.Name = "chckbVOIP";
             this.chckbVOIP.Size = new System.Drawing.Size(61, 23);
             this.chckbVOIP.TabIndex = 2;
@@ -99,7 +99,7 @@
             // chckbIPTV
             // 
             this.chckbIPTV.AutoSize = true;
-            this.chckbIPTV.Location = new System.Drawing.Point(39, 148);
+            this.chckbIPTV.Location = new System.Drawing.Point(28, 148);
             this.chckbIPTV.Name = "chckbIPTV";
             this.chckbIPTV.Size = new System.Drawing.Size(68, 23);
             this.chckbIPTV.TabIndex = 2;
@@ -109,7 +109,7 @@
             // chckbInternet
             // 
             this.chckbInternet.AutoSize = true;
-            this.chckbInternet.Location = new System.Drawing.Point(39, 119);
+            this.chckbInternet.Location = new System.Drawing.Point(28, 119);
             this.chckbInternet.Name = "chckbInternet";
             this.chckbInternet.Size = new System.Drawing.Size(81, 23);
             this.chckbInternet.TabIndex = 2;
@@ -119,7 +119,7 @@
             // chckbIBoard
             // 
             this.chckbIBoard.AutoSize = true;
-            this.chckbIBoard.Location = new System.Drawing.Point(39, 90);
+            this.chckbIBoard.Location = new System.Drawing.Point(28, 90);
             this.chckbIBoard.Name = "chckbIBoard";
             this.chckbIBoard.Size = new System.Drawing.Size(79, 23);
             this.chckbIBoard.TabIndex = 2;
@@ -128,8 +128,9 @@
             // 
             // chckbProjection
             // 
+            this.chckbProjection.AutoCheck = false;
             this.chckbProjection.AutoSize = true;
-            this.chckbProjection.Location = new System.Drawing.Point(39, 61);
+            this.chckbProjection.Location = new System.Drawing.Point(28, 61);
             this.chckbProjection.Name = "chckbProjection";
             this.chckbProjection.Size = new System.Drawing.Size(98, 23);
             this.chckbProjection.TabIndex = 2;
@@ -154,22 +155,33 @@
             // 
             // grpProperty
             // 
-            this.grpProperty.Controls.Add(this.chckbVOIP);
-            this.grpProperty.Controls.Add(this.chckbIPTV);
-            this.grpProperty.Controls.Add(this.chckbInternet);
-            this.grpProperty.Controls.Add(this.chckbIBoard);
-            this.grpProperty.Controls.Add(this.chckbProjection);
+            this.grpProperty.Controls.Add(this.chckbKlima);
             this.grpProperty.Controls.Add(this.label3);
+            this.grpProperty.Controls.Add(this.chckbVOIP);
+            this.grpProperty.Controls.Add(this.chckbProjection);
+            this.grpProperty.Controls.Add(this.chckbIPTV);
+            this.grpProperty.Controls.Add(this.chckbIBoard);
+            this.grpProperty.Controls.Add(this.chckbInternet);
             this.grpProperty.Controls.Add(this.nudRoomCapacity);
             this.grpProperty.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpProperty.Location = new System.Drawing.Point(308, 125);
             this.grpProperty.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grpProperty.Name = "grpProperty";
             this.grpProperty.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grpProperty.Size = new System.Drawing.Size(157, 211);
+            this.grpProperty.Size = new System.Drawing.Size(157, 240);
             this.grpProperty.TabIndex = 11;
             this.grpProperty.TabStop = false;
             this.grpProperty.Text = "Özellikler";
+            // 
+            // chckbKlima
+            // 
+            this.chckbKlima.AutoSize = true;
+            this.chckbKlima.Location = new System.Drawing.Point(28, 206);
+            this.chckbKlima.Name = "chckbKlima";
+            this.chckbKlima.Size = new System.Drawing.Size(61, 23);
+            this.chckbKlima.TabIndex = 2;
+            this.chckbKlima.Text = "Klima";
+            this.chckbKlima.UseVisualStyleBackColor = true;
             // 
             // cbxMeetRoom
             // 
@@ -202,7 +214,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCancel.Location = new System.Drawing.Point(509, 417);
+            this.btnCancel.Location = new System.Drawing.Point(616, 425);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 13;
@@ -308,7 +320,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(634, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(741, 27);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -326,7 +338,18 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(472, 186);
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Ephesus",
+            "Phokaia",
+            "Milet",
+            "Aspendos",
+            "Theos",
+            "Aizanoi",
+            "Anavarza",
+            "Zeugma",
+            "Knidos",
+            "Apollon"});
+            this.checkedListBox1.Location = new System.Drawing.Point(483, 125);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(150, 154);
             this.checkedListBox1.TabIndex = 3;
@@ -334,7 +357,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUpdate.Location = new System.Drawing.Point(509, 353);
+            this.btnUpdate.Location = new System.Drawing.Point(616, 361);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 33);
             this.btnUpdate.TabIndex = 15;
@@ -345,7 +368,7 @@
             // btnGetir
             // 
             this.btnGetir.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetir.Location = new System.Drawing.Point(139, 176);
+            this.btnGetir.Location = new System.Drawing.Point(182, 158);
             this.btnGetir.Name = "btnGetir";
             this.btnGetir.Size = new System.Drawing.Size(75, 33);
             this.btnGetir.TabIndex = 16;
@@ -353,21 +376,11 @@
             this.btnGetir.UseVisualStyleBackColor = true;
             this.btnGetir.Click += new System.EventHandler(this.btnGetir_Click);
             // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(41, 176);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 17;
-            this.btnNew.Text = "nesibe";
-            this.btnNew.UseVisualStyleBackColor = true;
-            // 
             // MeetRoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 462);
-            this.Controls.Add(this.btnNew);
+            this.ClientSize = new System.Drawing.Size(741, 553);
             this.Controls.Add(this.btnGetir);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.checkedListBox1);
@@ -429,6 +442,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnGetir;
-        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.CheckBox chckbKlima;
     }
 }
