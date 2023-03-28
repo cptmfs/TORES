@@ -54,5 +54,18 @@ namespace TORES.Wf
             MessageBox.Show($"ID No : {dgwLog.CurrentRow.Cells[0].Value} olan Log Kaydı Veritabanından başarılı bir şekilde silinmiştir.","Log Kaydı Silme",MessageBoxButtons.OK,MessageBoxIcon.Information);
             ListLog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            connection.Open();
+            SqlCommand cmd2 = new SqlCommand("DELETE FROM datLog WHERE LogID=@LogID", connection);
+            cmd2.Parameters.AddWithValue("@LogID", dgwLog.CurrentRow.Cells[0].Value);
+            cmd2.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show($"Log Kaydı : {dgwLog.CurrentRow.Cells[0].Value} olan Log Kaydı Veritabanından başarılı bir şekilde silinmiştir.", "Tüm kaydı Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            ListLog();
+
+        }
     }
 }

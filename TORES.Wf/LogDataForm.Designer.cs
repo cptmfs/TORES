@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnList = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwLog)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,23 +61,33 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(148, 315);
+            this.btnList.Location = new System.Drawing.Point(32, 315);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(222, 41);
             this.btnList.TabIndex = 2;
-            this.btnList.Text = "Listele";
+            this.btnList.Text = "Kayıtları Göster";
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(385, 315);
+            this.btnClear.Location = new System.Drawing.Point(279, 315);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(214, 41);
             this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Temizle";
+            this.btnClear.Text = "Kayıt Sil";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(512, 315);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(214, 41);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Tümünü Temizle";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.button1_Click);
             // 
             // LogDataForm
             // 
@@ -84,6 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(784, 361);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.label1);
@@ -106,5 +118,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
