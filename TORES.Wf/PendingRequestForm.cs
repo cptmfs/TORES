@@ -13,12 +13,15 @@ namespace TORES.Wf
 {
     public partial class PendingRequestForm : Form
     {
+
+
         public PendingRequestForm()
         {
             InitializeComponent();
         }
 
         SqlConnection connection= new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ToresDB;Integrated Security=True");
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -30,7 +33,7 @@ namespace TORES.Wf
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            dgwRejected.DataSource = dt;
+            dgwOnayBekleyen.DataSource = dt;
             connection.Close();
         }
         private void OnayVerilen()
@@ -40,7 +43,7 @@ namespace TORES.Wf
             SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
-            dgwApproved.DataSource = dt2;
+            dgwOnayVerilen.DataSource = dt2;
             connection.Close();
         }
 
@@ -49,7 +52,11 @@ namespace TORES.Wf
             OnayBekleyen();
             OnayVerilen ();
         }
-        
-        
+
+        private void btnOnayla_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

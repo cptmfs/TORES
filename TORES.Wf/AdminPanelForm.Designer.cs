@@ -188,9 +188,9 @@
             this.pnlPendingRequest.Controls.Add(this.label7);
             this.pnlPendingRequest.Location = new System.Drawing.Point(344, 274);
             this.pnlPendingRequest.Name = "pnlPendingRequest";
-            this.pnlPendingRequest.Size = new System.Drawing.Size(322, 124);
+            this.pnlPendingRequest.Size = new System.Drawing.Size(344, 124);
             this.pnlPendingRequest.TabIndex = 7;
-            this.pnlPendingRequest.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPendingRequest_Paint);
+            this.pnlPendingRequest.Click += new System.EventHandler(this.pnlPendingRequest_Click);
             // 
             // label7
             // 
