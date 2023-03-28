@@ -57,10 +57,10 @@ namespace TORES.Wf
 
             for (int i = 9; i <= 19; i++)   // cbxMeetingStart ve cbxMeetingEnd 09:00 - 18:00 arası dolduruldu
             {
-                cbxMeetingStart.Items.Add(i + ":00");
+                cbxMeetingStart.Items.Add(i ); //+ ":00"
 
 
-                cbxMeetingEnd.Items.Add(i + ":00");
+                cbxMeetingEnd.Items.Add(i ); //+ ":00"
 
             }
 
@@ -74,14 +74,13 @@ namespace TORES.Wf
             GetReservationInfo(); // server'dan rezervasyon bilgilerini çekti
 
 
-
             // Kullanıcıya göre lblUserInfo Ad Soyad - Departman olarak değişecek
             // oda isimlerine göre rezerve edilen tarihler çekilecek - db den
             // tarih bilgisi girilecek bu bilgilere göre db ki tablo çekilecek (dbo.dtReservation)
             // yeni girilen ve önceden kayıtlı olan bilgiler kıyaslanacak
             // uygun saatler comboda gösterilecek ? 
 
-            
+
 
 
 
@@ -153,6 +152,46 @@ namespace TORES.Wf
             this.Close();
         }
 
+        private void ReservationTimeControl()
+        {
+            List<Meeting> meetingHourList = new List<Meeting>();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("Select ResStartDT,ResEndDT From datReservation where ResRoomID=@roomId and ResMeetingDT=@meetDt and ResStatus=1", connection);
+            cmd.Parameters.AddWithValue("@roomId", cbxRooms.SelectedValue);
+            cmd.Parameters.AddWithValue("@meetDt", dtpMeetingDate.Text);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Meeting meeting = new Meeting();
+                meeting.ResStartDT = (int)dr["ResStartDT"];
+                meeting.ResEndDT = (int)dr["ResEndDT"];
+                meetingHourList.Add(meeting);
+            }
+            dr.Close();
+            connection.Close();
+
+            foreach (var item in meetingHourList)
+            {
+                for (int i = item.ResStartDT; i == item.ResStartDT; i++)
+                {
+                    var startTime = cbxMeetingStart.Items.Cast<int>().SingleOrDefault(x => x == i);
+                    if (startTime != null)
+                    {
+                        cbxMeetingStart.Items.Remove(startTime);
+                    } 
+                }
+                for (int i = item.ResEndDT; i == item.ResEndDT; i++)
+                {
+                    var endTime = cbxMeetingEnd.Items.Cast<int>().SingleOrDefault(y => y == i);
+
+                    if (endTime != null)
+                    {
+                        cbxMeetingEnd.Items.Remove(endTime);
+                    }
+                }
+       
+            }
+        }
         private void btnSendRequest_Click(object sender, EventArgs e)
         {
             // butona basıldığında admine oda rezervasyon isteği gönderilecek
@@ -176,6 +215,25 @@ namespace TORES.Wf
                     this.Close();
                 }
             }
+
+        }
+        public class Meeting
+        {
+            public int ResStartDT { get; set; }
+            public int ResEndDT { get; set;}
+
+
+        }
+        private void MeetingControl()
+        {
+           
+
+
+        }
+
+        private void btnSaat_Click(object sender, EventArgs e)
+        {
+            ReservationTimeControl();
 
         }
     }
