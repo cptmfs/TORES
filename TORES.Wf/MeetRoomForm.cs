@@ -90,7 +90,7 @@ namespace TORES.Wf
                     cbxMeetRoom.DropDownStyle = ComboBoxStyle.DropDownList;
                     checkedListBox1.Visible = false;
                 }
-                checkedListBox1.Visible = true;
+                checkedListBox1.Visible = false;
             
         }
             private void CheckedListBoxLoad()
@@ -105,11 +105,6 @@ namespace TORES.Wf
                 connection.Close();
             }
 
-            private void cbxMeetRoom_SelectedValueChanged(object sender, EventArgs e)
-            {
-
-
-            }
 
             private void btnGetir_Click(object sender, EventArgs e)
             {

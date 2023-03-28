@@ -80,7 +80,7 @@
             this.btnRequest.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRequest.Location = new System.Drawing.Point(344, 371);
             this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(101, 54);
+            this.btnRequest.Size = new System.Drawing.Size(99, 49);
             this.btnRequest.TabIndex = 12;
             this.btnRequest.Text = "Rezervasyon İsteği";
             this.btnRequest.UseVisualStyleBackColor = true;
@@ -193,7 +193,6 @@
             this.cbxMeetRoom.Size = new System.Drawing.Size(118, 27);
             this.cbxMeetRoom.TabIndex = 8;
             this.cbxMeetRoom.SelectedIndexChanged += new System.EventHandler(this.cbxMeetRoom_SelectedIndexChanged);
-            this.cbxMeetRoom.SelectedValueChanged += new System.EventHandler(this.cbxMeetRoom_SelectedValueChanged);
             // 
             // label2
             // 
@@ -351,7 +350,7 @@
             "Apollon"});
             this.checkedListBox1.Location = new System.Drawing.Point(483, 125);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(150, 154);
+            this.checkedListBox1.Size = new System.Drawing.Size(77, 154);
             this.checkedListBox1.TabIndex = 3;
             // 
             // btnUpdate
