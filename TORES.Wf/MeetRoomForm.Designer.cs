@@ -344,7 +344,7 @@
             // btnGetir
             // 
             this.btnGetir.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetir.Location = new System.Drawing.Point(187, 158);
+            this.btnGetir.Location = new System.Drawing.Point(139, 176);
             this.btnGetir.Name = "btnGetir";
             this.btnGetir.Size = new System.Drawing.Size(75, 33);
             this.btnGetir.TabIndex = 16;
