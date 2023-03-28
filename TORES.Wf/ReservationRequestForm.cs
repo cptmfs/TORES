@@ -37,6 +37,8 @@ namespace TORES.Wf
         private void btnRoomFeatures_Click(object sender, EventArgs e)
         {
             // MeetRoomForm 'a yönlendirecek
+            MeetRoomForm meetRoomForm = new MeetRoomForm();
+            meetRoomForm.ShowDialog();
 
         }
 
@@ -62,6 +64,9 @@ namespace TORES.Wf
 
                 cbxMeetingEnd.Items.Add(i + ":00");
 
+
+
+
             }
 
             cbxMeetingStart.SelectedIndex = 0;      // saatleri ilk indekste seçili
@@ -75,20 +80,54 @@ namespace TORES.Wf
 
 
 
+
             // Kullanıcıya göre lblUserInfo Ad Soyad - Departman olarak değişecek
             // oda isimlerine göre rezerve edilen tarihler çekilecek - db den
             // tarih bilgisi girilecek bu bilgilere göre db ki tablo çekilecek (dbo.dtReservation)
             // yeni girilen ve önceden kayıtlı olan bilgiler kıyaslanacak
             // uygun saatler comboda gösterilecek ? 
 
-            
 
 
+            BindDateTime(dtpMeetingDate.Checked.ToString(),cbxMeetingStart.SelectedItem.ToString());
 
             lblId.Text = userId.ToString();
             
         }
 
+        private string BindDateTime(string date,string time)
+        {
+            // burada amacım gelen tarih ve saat bilgilerini birleştirmek. Format -> (YYYYAAGGSSDD)
+
+            date  = dtpMeetingDate.Text  ;   // dtpMeetingDate teki tarihi string olarak aldım
+            
+            string newDate = ""; // gg.aa.yyyy formatında gelen date değişkeni arasındaki noktaları silip atacağım yeni değişken           
+            string newTime = "";
+            for (int i = 0; i < date.Length; i++)
+            {
+                if (date[i] != '.' )
+                {
+                    newDate += date[i];
+                }
+
+            }
+            for (int i = 0; i < time.Length; i++)
+            {
+
+                if (time[i] != ':')
+                {
+                    newTime += time[i];
+                }
+            }
+
+            newDate += newTime;
+
+
+            return newDate;
+            
+        }
+        
+        
 
         private void GetRooms()
         {
@@ -141,6 +180,9 @@ namespace TORES.Wf
                         {
                             sda.Fill(dSet);
 
+                            
+                            
+
                         }
                     }
                 }
@@ -156,26 +198,49 @@ namespace TORES.Wf
         private void btnSendRequest_Click(object sender, EventArgs e)
         {
             // butona basıldığında admine oda rezervasyon isteği gönderilecek
-            using (SqlConnection con = new SqlConnection(conString))  // TORESDB bağlantı
-            {
-                vsSQLCommand = "Insert into datReservation (ResRoomID,ResStartDT,ResEndDT,ResUserID,ResDesc,ResStatus) values (@resRoomId,@resStartDt,@resEndDt,@resUserId,@resDesc,@resStatus)";
-                using (SqlCommand cmd2 = new SqlCommand(vsSQLCommand, con))
-                {
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.Parameters.AddWithValue("@resRoomId",cbxRooms.SelectedValue);
-                    cmd2.Parameters.AddWithValue("@resStartDt", cbxMeetingStart.SelectedItem);
-                    cmd2.Parameters.AddWithValue("@resEndDt", cbxMeetingEnd.SelectedItem);
-                    cmd2.Parameters.AddWithValue("@resUserId", userId);
-                    cmd2.Parameters.AddWithValue("@resDesc", txtDetails.Text);
-                    cmd2.Parameters.AddWithValue("@resStatus", 0);
-                    con.Open();
-                    cmd2.ExecuteNonQuery();
-                    MessageBox.Show("Rezervasyon isteği başarılı bir şekilde oluşturuldu. Admin onayı bekliyor.", "Reservation Request",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    con.Close();
+            string dateStart = BindDateTime(dtpMeetingDate.Text,cbxMeetingStart.SelectedItem.ToString());
+            string dateEnd= BindDateTime(dtpMeetingDate.Text, cbxMeetingEnd.SelectedItem.ToString());
 
-                    this.Close();
-                }
+            #region Admine oda rezervasyon isteği gönderme
+
+            if (cbxRooms.SelectedIndex < 1)
+            {
+                MessageBox.Show("Lüften oda seçiniz.");
             }
+
+                if (dtpMeetingDate.Value < DateTime.Now)
+                {
+                    MessageBox.Show("Lütfen geçerli bir tarih seçiniz.");
+
+                }
+                else
+                {
+
+
+
+                    using (SqlConnection con = new SqlConnection(conString))  // TORESDB bağlantı
+                    {
+                        vsSQLCommand = "Insert into datReservation (ResRoomID,ResStartDT,ResEndDT,ResUserID,ResDesc,ResStatus) values (@resRoomId,@resStartDt,@resEndDt,@resUserId,@resDesc,@resStatus)";
+                        using (SqlCommand cmd2 = new SqlCommand(vsSQLCommand, con))
+                        {
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.Parameters.AddWithValue("@resRoomId", cbxRooms.SelectedValue);
+                            cmd2.Parameters.AddWithValue("@resStartDt", dateStart);
+                            cmd2.Parameters.AddWithValue("@resEndDt", dateEnd);
+                            cmd2.Parameters.AddWithValue("@resUserId", userId);
+                            cmd2.Parameters.AddWithValue("@resDesc", txtDetails.Text);
+                            cmd2.Parameters.AddWithValue("@resStatus", 0);
+                            con.Open();
+                            cmd2.ExecuteNonQuery();
+                            MessageBox.Show("Rezervasyon isteği başarılı bir şekilde oluşturuldu. Admin onayı bekliyor.", "Reservation Request", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            con.Close();
+
+                            this.Close();  // Admin menüsüne dönüyor 
+                        }
+                    }
+                }
+            
+            #endregion
 
         }
     }
