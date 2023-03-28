@@ -70,11 +70,19 @@
     <Compile Include="MeetRoomForm.Designer.cs">
       <DependentUpon>MeetRoomForm.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="PendingRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingRequestForm.Designer.cs">
+      <DependentUpon>PendingRequestForm.cs</DependentUpon>
+
     <Compile Include="MyRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyRequestForm.Designer.cs">
       <DependentUpon>MyRequestForm.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,8 +110,13 @@
     <EmbeddedResource Include="MeetRoomForm.resx">
       <DependentUpon>MeetRoomForm.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="PendingRequestForm.resx">
+      <DependentUpon>PendingRequestForm.cs</DependentUpon>
+
     <EmbeddedResource Include="MyRequestForm.resx">
       <DependentUpon>MyRequestForm.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

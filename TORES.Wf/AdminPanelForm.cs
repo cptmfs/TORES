@@ -17,6 +17,7 @@ namespace TORES.Wf
         public AdminPanelForm()
         {
             InitializeComponent();
+           
         }
         public string userStatus = "admin";
         private void pnlExit_Click(object sender, EventArgs e)
@@ -39,11 +40,6 @@ namespace TORES.Wf
             MeetRoomForm mf = new MeetRoomForm();
             mf.userControl = userStatus;
             mf.ShowDialog();
-           
-
-
-
-
         }
 
         private void pnlLogData_Click_1(object sender, EventArgs e)
@@ -72,11 +68,11 @@ namespace TORES.Wf
             lblusID.Text=userId.ToString();
         }
 
-
-
-        private void pnlRoomList_Paint(object sender, PaintEventArgs e)
+        private void pnlPendingRequest_Click(object sender, EventArgs e)
         {
-
+           //Rezervasyon istekleri açılacak
+           PendingRequestForm pendingrequestForm = new PendingRequestForm();
+           pendingrequestForm.ShowDialog();
         }
     }
 }
