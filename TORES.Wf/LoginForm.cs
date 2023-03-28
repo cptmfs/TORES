@@ -52,7 +52,6 @@ namespace TORES.Wf
                 }
                 UserPanelForm user = new UserPanelForm();
                 user.ShowDialog();
-                this.Close();
 
             }
             else
