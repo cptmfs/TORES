@@ -5,8 +5,6 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TORES.Wf", "TORES.Wf\TORES.Wf.csproj", "{B74EAFA8-E523-4997-9073-6E65A464D91D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TORES", "..\TORESDeneme\TORES\TORES.csproj", "{63C0561C-B1F0-4C6D-ACA7-A64CFF77A9D7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{B74EAFA8-E523-4997-9073-6E65A464D91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B74EAFA8-E523-4997-9073-6E65A464D91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B74EAFA8-E523-4997-9073-6E65A464D91D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63C0561C-B1F0-4C6D-ACA7-A64CFF77A9D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63C0561C-B1F0-4C6D-ACA7-A64CFF77A9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63C0561C-B1F0-4C6D-ACA7-A64CFF77A9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63C0561C-B1F0-4C6D-ACA7-A64CFF77A9D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
