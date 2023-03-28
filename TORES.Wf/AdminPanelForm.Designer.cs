@@ -41,12 +41,15 @@
             this.pnlSupport = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lblusID = new System.Windows.Forms.Label();
+            this.pnlPendingRequest = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnlRoomList.SuspendLayout();
             this.pnlRezReq.SuspendLayout();
             this.pnlMeetRooms.SuspendLayout();
             this.pnlLogData.SuspendLayout();
             this.pnlExit.SuspendLayout();
             this.pnlSupport.SuspendLayout();
+            this.pnlPendingRequest.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRoomList
@@ -133,9 +136,9 @@
             // 
             this.pnlExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(59)))), ((int)(((byte)(87)))));
             this.pnlExit.Controls.Add(this.label6);
-            this.pnlExit.Location = new System.Drawing.Point(340, 272);
+            this.pnlExit.Location = new System.Drawing.Point(15, 404);
             this.pnlExit.Name = "pnlExit";
-            this.pnlExit.Size = new System.Drawing.Size(348, 124);
+            this.pnlExit.Size = new System.Drawing.Size(674, 124);
             this.pnlExit.TabIndex = 5;
             this.pnlExit.Click += new System.EventHandler(this.pnlExit_Click);
             // 
@@ -143,7 +146,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(117, 47);
+            this.label6.Location = new System.Drawing.Point(273, 48);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 35);
             this.label6.TabIndex = 1;
@@ -179,12 +182,33 @@
             this.lblusID.TabIndex = 6;
             this.lblusID.Text = "label7";
             // 
+            // pnlPendingRequest
+            // 
+            this.pnlPendingRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(188)))), ((int)(((byte)(249)))));
+            this.pnlPendingRequest.Controls.Add(this.label7);
+            this.pnlPendingRequest.Location = new System.Drawing.Point(344, 274);
+            this.pnlPendingRequest.Name = "pnlPendingRequest";
+            this.pnlPendingRequest.Size = new System.Drawing.Size(322, 124);
+            this.pnlPendingRequest.TabIndex = 7;
+            this.pnlPendingRequest.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPendingRequest_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(270, 35);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Pending Request";
+            // 
             // AdminPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(142)))), ((int)(((byte)(155)))));
-            this.ClientSize = new System.Drawing.Size(696, 406);
+            this.ClientSize = new System.Drawing.Size(701, 540);
+            this.Controls.Add(this.pnlPendingRequest);
             this.Controls.Add(this.lblusID);
             this.Controls.Add(this.pnlExit);
             this.Controls.Add(this.pnlSupport);
@@ -209,6 +233,8 @@
             this.pnlExit.PerformLayout();
             this.pnlSupport.ResumeLayout(false);
             this.pnlSupport.PerformLayout();
+            this.pnlPendingRequest.ResumeLayout(false);
+            this.pnlPendingRequest.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +255,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblusID;
+        private System.Windows.Forms.Panel pnlPendingRequest;
+        private System.Windows.Forms.Label label7;
     }
 }

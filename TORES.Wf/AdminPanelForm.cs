@@ -71,5 +71,10 @@ namespace TORES.Wf
         {
             lblusID.Text=userId.ToString();
         }
+
+        private void pnlPendingRequest_Paint(object sender, PaintEventArgs e)
+        {
+            //Rezervasyon istekleri açılacak
+        }
     }
 }
