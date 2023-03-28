@@ -52,6 +52,12 @@
     <Compile Include="AdminPanelForm.Designer.cs">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogDataForm.Designer.cs">
+      <DependentUpon>LogDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
