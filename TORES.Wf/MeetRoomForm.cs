@@ -85,7 +85,7 @@ namespace TORES.Wf
 
                 if (userControl == "user")
                 {
-                   // checkedListBox1.Enabled = false;
+                gbxRoomSpec.Enabled = false;
                     nudRoomCapacity.Enabled = false;
                     cbxMeetRoom.DropDownStyle = ComboBoxStyle.DropDownList;
                     checkedListBox1.Visible = false;
