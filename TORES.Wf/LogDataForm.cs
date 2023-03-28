@@ -29,6 +29,9 @@ namespace TORES.Wf
             da.Fill(dt);                                                            //
             dgwLog.DataSource = dt;
             connection.Close();
+
+
+
         }
 
         private void LogDataForm_Load(object sender, EventArgs e)
