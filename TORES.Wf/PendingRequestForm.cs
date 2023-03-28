@@ -24,7 +24,7 @@ namespace TORES.Wf
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
         private void OnayBekleyen()
         {

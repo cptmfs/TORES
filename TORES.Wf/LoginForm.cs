@@ -14,6 +14,7 @@ namespace TORES.Wf
     public partial class LoginForm : Form
     {
         SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ToresDB;Integrated Security=True"); // burada SQL bağlantı kurduk.
+        int userId=0;
         public LoginForm()
         {
             InitializeComponent();
@@ -39,7 +40,8 @@ namespace TORES.Wf
             SqlDataReader dr = cmd.ExecuteReader(); // bu verileri veritabanından  oku 
             if (dr.Read()) // degerleri okuduysan
             {
-                int id = dr.GetInt32(0);                 
+                int id = dr.GetInt32(0);
+                userId = id;
                 loginTime = DateTime.Now; // logintime 'a giriş saaatini ve tarihini atadık..
                 //Ana panel formundan bir nesne üret
                 //anapaneli göster Show ile
@@ -72,20 +74,20 @@ namespace TORES.Wf
             connection.Open();
             string userName = txtUserName.Text;
             message = $"Login Message:{userName} successfully login";
-            SqlCommand cmd2 = new SqlCommand("Insert into datLog (UserID,LoginDT,LogoutDT,LogNotes) values (@userId,@loginDt,@logoutDt,@logNotes", connection);
-            cmd2.Parameters.AddWithValue("@userId", userName);
-            cmd2.Parameters.AddWithValue("@loginDt", loginTime.ToString());
-            cmd2.Parameters.AddWithValue("@logoutDt", logoutTime.ToString());
-            cmd2.Parameters.AddWithValue("@logNotes", message.ToString());
+            SqlCommand cmd2 = new SqlCommand("Insert into datLog (UserID,LoginDT,LogoutDT,LogNotes) values (@userId,@loginDt,@logoutDt,@logNotes)", connection);
+            cmd2.Parameters.AddWithValue("@userId", userId);
+            cmd2.Parameters.AddWithValue("@loginDt", loginTime);
+            cmd2.Parameters.AddWithValue("@logoutDt", logoutTime);
+            cmd2.Parameters.AddWithValue("@logNotes", message);
             cmd2.ExecuteNonQuery(); // değişiklikleri veritabanına yansıt .. Kaydet gibi
             connection.Close();
         }
         private void LogErMsg()
         {
             string userName = txtUserName.Text;
-            message = "Error Message:login error";
+            message = $"Error Message:{userName} Unauthorized login error";
             SqlCommand cmd2 = new SqlCommand("Insert into datLog (UserID,LoginDT,LogoutDT,LogNotes) values (@userId,@loginDt,@logoutDt,@logNotes)", connection);
-            cmd2.Parameters.AddWithValue("@userId", 3);
+            cmd2.Parameters.AddWithValue("@userId",31 );
             cmd2.Parameters.AddWithValue("@loginDt", errorTime);
             cmd2.Parameters.AddWithValue("@logoutDt", errorTime);
             cmd2.Parameters.AddWithValue("@logNotes", message);

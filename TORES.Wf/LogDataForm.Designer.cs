@@ -33,6 +33,7 @@
             this.btnList = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwLog)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,9 +62,9 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(32, 315);
+            this.btnList.Location = new System.Drawing.Point(12, 315);
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(222, 41);
+            this.btnList.Size = new System.Drawing.Size(181, 41);
             this.btnList.TabIndex = 2;
             this.btnList.Text = "Kayıtları Göster";
             this.btnList.UseVisualStyleBackColor = true;
@@ -71,9 +72,9 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(279, 315);
+            this.btnClear.Location = new System.Drawing.Point(204, 315);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(214, 41);
+            this.btnClear.Size = new System.Drawing.Size(181, 41);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Kayıt Sil";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -81,13 +82,23 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(512, 315);
+            this.btnDelete.Location = new System.Drawing.Point(397, 315);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(214, 41);
+            this.btnDelete.Size = new System.Drawing.Size(181, 41);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Tümünü Temizle";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(591, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(181, 41);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Çıkış";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // LogDataForm
             // 
@@ -95,6 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(784, 361);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnList);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button button1;
     }
 }

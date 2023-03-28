@@ -45,8 +45,8 @@ namespace TORES.Wf
         private void pnlLogData_Click_1(object sender, EventArgs e)
         {
             //Giriş Kayıtları
-
-
+            LogDataForm log = new LogDataForm();
+            log.Show();
         }
 
         private void pnlRezReq_Click(object sender, EventArgs e)
@@ -61,6 +61,7 @@ namespace TORES.Wf
         private void pnlRoomList_Click_1(object sender, EventArgs e)
         {
             //Oda Listesi açılacak
+
         }
 
         private void AdminPanelForm_Load(object sender, EventArgs e)
@@ -68,11 +69,12 @@ namespace TORES.Wf
             lblusID.Text=userId.ToString();
         }
 
-        private void pnlPendingRequest_Click(object sender, EventArgs e)
+
+        private void pnlPendingRequest_Click_1(object sender, EventArgs e)
         {
-           //Rezervasyon istekleri açılacak
-           PendingRequestForm pendingrequestForm = new PendingRequestForm();
-           pendingrequestForm.ShowDialog();
+            //Bekleyen Rezervasyon istekleri açılacak
+            PendingRequestForm pendingrequestForm = new PendingRequestForm();
+            pendingrequestForm.ShowDialog();
         }
     }
 }

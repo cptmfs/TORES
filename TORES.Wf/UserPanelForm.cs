@@ -28,13 +28,15 @@ namespace TORES.Wf
         {
             MeetRoomForm mf = new MeetRoomForm();
             mf.userControl = userStatus;
+            mf.userId = userid; 
             mf.ShowDialog();
             
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ReservationRequestForm rs = new ReservationRequestForm();   
+            ReservationRequestForm rs = new ReservationRequestForm();  
+            rs.userId= userid;
             rs.ShowDialog();
             
         }

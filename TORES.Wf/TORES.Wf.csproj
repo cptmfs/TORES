@@ -76,7 +76,7 @@
     </Compile>
     <Compile Include="PendingRequestForm.Designer.cs">
       <DependentUpon>PendingRequestForm.cs</DependentUpon>
-
+	</Compile>
     <Compile Include="MyRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,10 +113,9 @@
 
     <EmbeddedResource Include="PendingRequestForm.resx">
       <DependentUpon>PendingRequestForm.cs</DependentUpon>
-
+	</EmbeddedResource>
     <EmbeddedResource Include="MyRequestForm.resx">
       <DependentUpon>MyRequestForm.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

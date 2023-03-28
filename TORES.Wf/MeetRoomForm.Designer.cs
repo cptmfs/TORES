@@ -97,6 +97,7 @@
             this.chckbVOIP.TabIndex = 2;
             this.chckbVOIP.Text = "VOIP";
             this.chckbVOIP.UseVisualStyleBackColor = true;
+            this.chckbVOIP.CheckedChanged += new System.EventHandler(this.chckbVOIP_CheckedChanged);
             // 
             // chckbIPTV
             // 
@@ -107,6 +108,7 @@
             this.chckbIPTV.TabIndex = 2;
             this.chckbIPTV.Text = "IP-TV";
             this.chckbIPTV.UseVisualStyleBackColor = true;
+            this.chckbIPTV.CheckedChanged += new System.EventHandler(this.chckbIPTV_CheckedChanged);
             // 
             // chckbInternet
             // 
@@ -117,6 +119,7 @@
             this.chckbInternet.TabIndex = 2;
             this.chckbInternet.Text = "Internet";
             this.chckbInternet.UseVisualStyleBackColor = true;
+            this.chckbInternet.CheckedChanged += new System.EventHandler(this.chckbInternet_CheckedChanged);
             // 
             // chckbIBoard
             // 
@@ -127,10 +130,10 @@
             this.chckbIBoard.TabIndex = 2;
             this.chckbIBoard.Text = "I-Board";
             this.chckbIBoard.UseVisualStyleBackColor = true;
+            this.chckbIBoard.CheckedChanged += new System.EventHandler(this.chckbIBoard_CheckedChanged);
             // 
             // chckbProjection
             // 
-            this.chckbProjection.AutoCheck = false;
             this.chckbProjection.AutoSize = true;
             this.chckbProjection.Location = new System.Drawing.Point(6, 30);
             this.chckbProjection.Name = "chckbProjection";
@@ -138,6 +141,7 @@
             this.chckbProjection.TabIndex = 2;
             this.chckbProjection.Text = "Projeksiyon";
             this.chckbProjection.UseVisualStyleBackColor = true;
+            this.chckbProjection.CheckedChanged += new System.EventHandler(this.chckbProjection_CheckedChanged);
             // 
             // label3
             // 
@@ -178,6 +182,7 @@
             this.chckbKlima.TabIndex = 2;
             this.chckbKlima.Text = "Klima";
             this.chckbKlima.UseVisualStyleBackColor = true;
+            this.chckbKlima.CheckedChanged += new System.EventHandler(this.chckbKlima_CheckedChanged);
             // 
             // cbxMeetRoom
             // 
