@@ -66,6 +66,8 @@ namespace TORES.Wf
             connection.Close();
         }
 
+       
+
         private void LogMsg()// SQL den aldığımız komutlar ile kullanıcı isimlerini parametrelere çevirerek veri tabanına işledik.
         {
             connection.Open();
@@ -88,7 +90,7 @@ namespace TORES.Wf
             cmd2.Parameters.AddWithValue("@loginDt", errorTime);
             cmd2.Parameters.AddWithValue("@logoutDt", errorTime);
             cmd2.Parameters.AddWithValue("@logNotes", message);
-            cmd2.ExecuteNonQuery(); // değişiklikleri veritabanına yansıt .. Kaydet gibi
+            cmd2.ExecuteNonQuery(); // değişiklikleri veritabanına yansıt .. Kaydet gibidir.
         }
     }
 }

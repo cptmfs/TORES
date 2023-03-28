@@ -59,6 +59,7 @@
             this.txtTORES.Size = new System.Drawing.Size(516, 24);
             this.txtTORES.TabIndex = 24;
             this.txtTORES.Text = "TORES v1.0";
+           
             // 
             // btnExıt
             // 
