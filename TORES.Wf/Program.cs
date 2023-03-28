@@ -16,7 +16,7 @@ namespace TORES.Wf
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MeetRoomForm());
+            Application.Run(new LoginForm());
         }
     }
 }

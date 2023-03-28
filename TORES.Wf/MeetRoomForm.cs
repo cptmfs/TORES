@@ -23,18 +23,11 @@ namespace TORES.Wf
             InitializeComponent();
         }
 
-
-
-
         private void cbxMeetRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             // combobox ın seçili indexinden checkboxta Enabled : True/False mu ayarlamasını yapacağız
-
-
-
         }
-
         private void RoomLoad()
             {
                 connection.Open();
@@ -78,7 +71,6 @@ namespace TORES.Wf
                 // Kullanıcının karar verdiği odanın SelectedValue değerini rezervasyon istek formuna parametre olarak gönderilecek
             }
 
-
             private void btnCancel_Click_1(object sender, EventArgs e)
             {
                 this.Close();
@@ -93,13 +85,13 @@ namespace TORES.Wf
 
                 if (userControl == "user")
                 {
-                    checkedListBox1.Enabled = false;
+                   // checkedListBox1.Enabled = false;
                     nudRoomCapacity.Enabled = false;
                     cbxMeetRoom.DropDownStyle = ComboBoxStyle.DropDownList;
                     checkedListBox1.Visible = false;
                 }
-                checkedListBox1.Visible = false;
-            checkedListBox1.Enabled = true;
+                checkedListBox1.Visible = true;
+            
         }
             private void CheckedListBoxLoad()
             {
