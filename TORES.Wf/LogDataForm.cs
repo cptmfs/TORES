@@ -57,7 +57,6 @@ namespace TORES.Wf
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             connection.Open();
             SqlCommand cmd2 = new SqlCommand("DELETE FROM datLog WHERE LogID=@LogID", connection);
             cmd2.Parameters.AddWithValue("@LogID", dgwLog.CurrentRow.Cells[0].Value);
