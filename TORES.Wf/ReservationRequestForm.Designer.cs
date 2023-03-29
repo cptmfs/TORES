@@ -65,7 +65,7 @@
             this.lblDetailsOptional.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblDetailsOptional.Location = new System.Drawing.Point(52, 332);
             this.lblDetailsOptional.Name = "lblDetailsOptional";
-            this.lblDetailsOptional.Size = new System.Drawing.Size(78, 20);
+            this.lblDetailsOptional.Size = new System.Drawing.Size(89, 22);
             this.lblDetailsOptional.TabIndex = 32;
             this.lblDetailsOptional.Text = "(Optional)";
             // 
@@ -84,7 +84,7 @@
             this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblDetails.Location = new System.Drawing.Point(52, 307);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(62, 20);
+            this.lblDetails.Size = new System.Drawing.Size(70, 22);
             this.lblDetails.TabIndex = 30;
             this.lblDetails.Text = "Details ";
             // 
@@ -93,9 +93,9 @@
             this.cbxMeetingEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMeetingEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxMeetingEnd.FormattingEnabled = true;
-            this.cbxMeetingEnd.Location = new System.Drawing.Point(390, 234);
+            this.cbxMeetingEnd.Location = new System.Drawing.Point(390, 246);
             this.cbxMeetingEnd.Name = "cbxMeetingEnd";
-            this.cbxMeetingEnd.Size = new System.Drawing.Size(173, 28);
+            this.cbxMeetingEnd.Size = new System.Drawing.Size(173, 30);
             this.cbxMeetingEnd.TabIndex = 29;
             // 
             // cbxMeetingStart
@@ -103,18 +103,18 @@
             this.cbxMeetingStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMeetingStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxMeetingStart.FormattingEnabled = true;
-            this.cbxMeetingStart.Location = new System.Drawing.Point(167, 234);
+            this.cbxMeetingStart.Location = new System.Drawing.Point(167, 246);
             this.cbxMeetingStart.Name = "cbxMeetingStart";
-            this.cbxMeetingStart.Size = new System.Drawing.Size(175, 28);
+            this.cbxMeetingStart.Size = new System.Drawing.Size(175, 30);
             this.cbxMeetingStart.TabIndex = 28;
             // 
             // lblStartEnd
             // 
             this.lblStartEnd.AutoSize = true;
             this.lblStartEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStartEnd.Location = new System.Drawing.Point(47, 234);
+            this.lblStartEnd.Location = new System.Drawing.Point(47, 246);
             this.lblStartEnd.Name = "lblStartEnd";
-            this.lblStartEnd.Size = new System.Drawing.Size(85, 20);
+            this.lblStartEnd.Size = new System.Drawing.Size(95, 22);
             this.lblStartEnd.TabIndex = 27;
             this.lblStartEnd.Text = "Start / End";
             // 
@@ -125,7 +125,7 @@
             this.dtpMeetingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpMeetingDate.Location = new System.Drawing.Point(167, 172);
             this.dtpMeetingDate.Name = "dtpMeetingDate";
-            this.dtpMeetingDate.Size = new System.Drawing.Size(396, 26);
+            this.dtpMeetingDate.Size = new System.Drawing.Size(396, 27);
             this.dtpMeetingDate.TabIndex = 26;
             // 
             // lblDate
@@ -134,7 +134,7 @@
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblDate.Location = new System.Drawing.Point(47, 172);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(44, 20);
+            this.lblDate.Size = new System.Drawing.Size(48, 22);
             this.lblDate.TabIndex = 25;
             this.lblDate.Text = "Date";
             // 
@@ -144,7 +144,7 @@
             this.lblHedingBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblHedingBottom.Location = new System.Drawing.Point(17, 646);
             this.lblHedingBottom.Name = "lblHedingBottom";
-            this.lblHedingBottom.Size = new System.Drawing.Size(540, 20);
+            this.lblHedingBottom.Size = new System.Drawing.Size(600, 22);
             this.lblHedingBottom.TabIndex = 24;
             this.lblHedingBottom.Text = "NOVAS WORKS - TOPLANTI ODALARI REZERVASYON SİSTEMİ";
             // 
@@ -154,7 +154,7 @@
             this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserInfo.Location = new System.Drawing.Point(203, 15);
             this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(263, 20);
+            this.lblUserInfo.Size = new System.Drawing.Size(292, 22);
             this.lblUserInfo.TabIndex = 23;
             this.lblUserInfo.Text = "<Name Surname - Department>";
             // 
@@ -164,7 +164,7 @@
             this.lblHeadingTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblHeadingTop.Location = new System.Drawing.Point(17, 15);
             this.lblHeadingTop.Name = "lblHeadingTop";
-            this.lblHeadingTop.Size = new System.Drawing.Size(160, 20);
+            this.lblHeadingTop.Size = new System.Drawing.Size(182, 22);
             this.lblHeadingTop.TabIndex = 22;
             this.lblHeadingTop.Text = "TORES v1.0 User :";
             // 
@@ -184,7 +184,7 @@
             this.lblRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblRooms.Location = new System.Drawing.Point(47, 102);
             this.lblRooms.Name = "lblRooms";
-            this.lblRooms.Size = new System.Drawing.Size(60, 20);
+            this.lblRooms.Size = new System.Drawing.Size(66, 22);
             this.lblRooms.TabIndex = 20;
             this.lblRooms.Text = "Rooms";
             // 
@@ -195,7 +195,7 @@
             this.cbxRooms.FormattingEnabled = true;
             this.cbxRooms.Location = new System.Drawing.Point(167, 99);
             this.cbxRooms.Name = "cbxRooms";
-            this.cbxRooms.Size = new System.Drawing.Size(231, 28);
+            this.cbxRooms.Size = new System.Drawing.Size(231, 30);
             this.cbxRooms.TabIndex = 19;
             // 
             // btnCancel
@@ -223,7 +223,7 @@
             this.btnSaat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSaat.Location = new System.Drawing.Point(381, 204);
             this.btnSaat.Name = "btnSaat";
-            this.btnSaat.Size = new System.Drawing.Size(182, 25);
+            this.btnSaat.Size = new System.Drawing.Size(182, 36);
             this.btnSaat.TabIndex = 35;
             this.btnSaat.Text = "Saatleri Göster";
             this.btnSaat.UseVisualStyleBackColor = true;
@@ -233,6 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(649, 674);
             this.Controls.Add(this.btnSaat);
             this.Controls.Add(this.lblId);
