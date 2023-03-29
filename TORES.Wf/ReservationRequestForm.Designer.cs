@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationRequestForm));
             this.btnSendRequest = new System.Windows.Forms.Button();
             this.lblDetailsOptional = new System.Windows.Forms.Label();
             this.txtDetails = new System.Windows.Forms.TextBox();
@@ -46,14 +47,16 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.btnSaat = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSendRequest
             // 
             this.btnSendRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSendRequest.Location = new System.Drawing.Point(464, 468);
+            this.btnSendRequest.Location = new System.Drawing.Point(142, 452);
             this.btnSendRequest.Name = "btnSendRequest";
-            this.btnSendRequest.Size = new System.Drawing.Size(99, 69);
+            this.btnSendRequest.Size = new System.Drawing.Size(173, 42);
             this.btnSendRequest.TabIndex = 33;
             this.btnSendRequest.Text = "Send Request";
             this.btnSendRequest.UseVisualStyleBackColor = true;
@@ -63,16 +66,16 @@
             // 
             this.lblDetailsOptional.AutoSize = true;
             this.lblDetailsOptional.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDetailsOptional.Location = new System.Drawing.Point(52, 332);
+            this.lblDetailsOptional.Location = new System.Drawing.Point(27, 332);
             this.lblDetailsOptional.Name = "lblDetailsOptional";
-            this.lblDetailsOptional.Size = new System.Drawing.Size(89, 22);
+            this.lblDetailsOptional.Size = new System.Drawing.Size(78, 20);
             this.lblDetailsOptional.TabIndex = 32;
             this.lblDetailsOptional.Text = "(Optional)";
             // 
             // txtDetails
             // 
             this.txtDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDetails.Location = new System.Drawing.Point(167, 301);
+            this.txtDetails.Location = new System.Drawing.Point(142, 301);
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.Size = new System.Drawing.Size(396, 140);
@@ -82,9 +85,9 @@
             // 
             this.lblDetails.AutoSize = true;
             this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDetails.Location = new System.Drawing.Point(52, 307);
+            this.lblDetails.Location = new System.Drawing.Point(27, 307);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(70, 22);
+            this.lblDetails.Size = new System.Drawing.Size(62, 20);
             this.lblDetails.TabIndex = 30;
             this.lblDetails.Text = "Details ";
             // 
@@ -93,9 +96,9 @@
             this.cbxMeetingEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMeetingEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxMeetingEnd.FormattingEnabled = true;
-            this.cbxMeetingEnd.Location = new System.Drawing.Point(390, 246);
+            this.cbxMeetingEnd.Location = new System.Drawing.Point(365, 246);
             this.cbxMeetingEnd.Name = "cbxMeetingEnd";
-            this.cbxMeetingEnd.Size = new System.Drawing.Size(173, 30);
+            this.cbxMeetingEnd.Size = new System.Drawing.Size(173, 28);
             this.cbxMeetingEnd.TabIndex = 29;
             // 
             // cbxMeetingStart
@@ -103,18 +106,18 @@
             this.cbxMeetingStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMeetingStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxMeetingStart.FormattingEnabled = true;
-            this.cbxMeetingStart.Location = new System.Drawing.Point(167, 246);
+            this.cbxMeetingStart.Location = new System.Drawing.Point(142, 246);
             this.cbxMeetingStart.Name = "cbxMeetingStart";
-            this.cbxMeetingStart.Size = new System.Drawing.Size(175, 30);
+            this.cbxMeetingStart.Size = new System.Drawing.Size(175, 28);
             this.cbxMeetingStart.TabIndex = 28;
             // 
             // lblStartEnd
             // 
             this.lblStartEnd.AutoSize = true;
             this.lblStartEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStartEnd.Location = new System.Drawing.Point(47, 246);
+            this.lblStartEnd.Location = new System.Drawing.Point(22, 246);
             this.lblStartEnd.Name = "lblStartEnd";
-            this.lblStartEnd.Size = new System.Drawing.Size(95, 22);
+            this.lblStartEnd.Size = new System.Drawing.Size(85, 20);
             this.lblStartEnd.TabIndex = 27;
             this.lblStartEnd.Text = "Start / End";
             // 
@@ -123,57 +126,57 @@
             this.dtpMeetingDate.CustomFormat = "yyyy-MM-dd";
             this.dtpMeetingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpMeetingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMeetingDate.Location = new System.Drawing.Point(167, 172);
+            this.dtpMeetingDate.Location = new System.Drawing.Point(142, 172);
             this.dtpMeetingDate.Name = "dtpMeetingDate";
-            this.dtpMeetingDate.Size = new System.Drawing.Size(396, 27);
+            this.dtpMeetingDate.Size = new System.Drawing.Size(396, 26);
             this.dtpMeetingDate.TabIndex = 26;
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDate.Location = new System.Drawing.Point(47, 172);
+            this.lblDate.Location = new System.Drawing.Point(22, 172);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(48, 22);
+            this.lblDate.Size = new System.Drawing.Size(44, 20);
             this.lblDate.TabIndex = 25;
             this.lblDate.Text = "Date";
             // 
             // lblHedingBottom
             // 
             this.lblHedingBottom.AutoSize = true;
-            this.lblHedingBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblHedingBottom.Location = new System.Drawing.Point(17, 646);
+            this.lblHedingBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblHedingBottom.Location = new System.Drawing.Point(103, 536);
             this.lblHedingBottom.Name = "lblHedingBottom";
-            this.lblHedingBottom.Size = new System.Drawing.Size(600, 22);
+            this.lblHedingBottom.Size = new System.Drawing.Size(393, 16);
             this.lblHedingBottom.TabIndex = 24;
-            this.lblHedingBottom.Text = "NOVAS WORKS - TOPLANTI ODALARI REZERVASYON SİSTEMİ";
+            this.lblHedingBottom.Text = "NOVAS WORKS - Toplantı Odaları Rezervasyon Sistemi";
             // 
             // lblUserInfo
             // 
             this.lblUserInfo.AutoSize = true;
-            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUserInfo.Location = new System.Drawing.Point(203, 15);
+            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUserInfo.Location = new System.Drawing.Point(164, 9);
             this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(292, 22);
+            this.lblUserInfo.Size = new System.Drawing.Size(222, 16);
             this.lblUserInfo.TabIndex = 23;
             this.lblUserInfo.Text = "<Name Surname - Department>";
             // 
             // lblHeadingTop
             // 
             this.lblHeadingTop.AutoSize = true;
-            this.lblHeadingTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblHeadingTop.Location = new System.Drawing.Point(17, 15);
+            this.lblHeadingTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblHeadingTop.Location = new System.Drawing.Point(7, 8);
             this.lblHeadingTop.Name = "lblHeadingTop";
-            this.lblHeadingTop.Size = new System.Drawing.Size(182, 22);
+            this.lblHeadingTop.Size = new System.Drawing.Size(136, 16);
             this.lblHeadingTop.TabIndex = 22;
             this.lblHeadingTop.Text = "TORES v1.0 User :";
             // 
             // btnRoomFeatures
             // 
             this.btnRoomFeatures.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRoomFeatures.Location = new System.Drawing.Point(454, 83);
+            this.btnRoomFeatures.Location = new System.Drawing.Point(398, 93);
             this.btnRoomFeatures.Name = "btnRoomFeatures";
-            this.btnRoomFeatures.Size = new System.Drawing.Size(109, 62);
+            this.btnRoomFeatures.Size = new System.Drawing.Size(140, 38);
             this.btnRoomFeatures.TabIndex = 21;
             this.btnRoomFeatures.Text = "Room Features";
             this.btnRoomFeatures.UseVisualStyleBackColor = true;
@@ -182,9 +185,9 @@
             // 
             this.lblRooms.AutoSize = true;
             this.lblRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRooms.Location = new System.Drawing.Point(47, 102);
+            this.lblRooms.Location = new System.Drawing.Point(22, 102);
             this.lblRooms.Name = "lblRooms";
-            this.lblRooms.Size = new System.Drawing.Size(66, 22);
+            this.lblRooms.Size = new System.Drawing.Size(60, 20);
             this.lblRooms.TabIndex = 20;
             this.lblRooms.Text = "Rooms";
             // 
@@ -193,17 +196,17 @@
             this.cbxRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxRooms.FormattingEnabled = true;
-            this.cbxRooms.Location = new System.Drawing.Point(167, 99);
+            this.cbxRooms.Location = new System.Drawing.Point(142, 99);
             this.cbxRooms.Name = "cbxRooms";
-            this.cbxRooms.Size = new System.Drawing.Size(231, 30);
+            this.cbxRooms.Size = new System.Drawing.Size(231, 28);
             this.cbxRooms.TabIndex = 19;
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCancel.Location = new System.Drawing.Point(520, 589);
+            this.btnCancel.Location = new System.Drawing.Point(356, 452);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(111, 45);
+            this.btnCancel.Size = new System.Drawing.Size(173, 42);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -212,29 +215,41 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(108, 542);
+            this.lblId.Location = new System.Drawing.Point(29, 468);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(35, 13);
             this.lblId.TabIndex = 34;
             this.lblId.Text = "label1";
+            this.lblId.Visible = false;
             // 
             // btnSaat
             // 
             this.btnSaat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaat.Location = new System.Drawing.Point(381, 204);
+            this.btnSaat.Location = new System.Drawing.Point(365, 204);
             this.btnSaat.Name = "btnSaat";
-            this.btnSaat.Size = new System.Drawing.Size(182, 36);
+            this.btnSaat.Size = new System.Drawing.Size(173, 36);
             this.btnSaat.TabIndex = 35;
-            this.btnSaat.Text = "Saatleri Göster";
+            this.btnSaat.Text = "Show Available Hours";
             this.btnSaat.UseVisualStyleBackColor = true;
             this.btnSaat.Click += new System.EventHandler(this.btnSaat_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(427, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(145, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
             // 
             // ReservationRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(649, 674);
+            this.ClientSize = new System.Drawing.Size(571, 561);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSaat);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnSendRequest);
@@ -258,6 +273,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservationRequestForm";
             this.Load += new System.EventHandler(this.ReservationRequestForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +299,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnSaat;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

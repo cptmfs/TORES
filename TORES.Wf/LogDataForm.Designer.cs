@@ -33,9 +33,7 @@
             this.btnList = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-
             this.btnExit = new System.Windows.Forms.Button();
-
             ((System.ComponentModel.ISupportInitialize)(this.dgwLog)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +55,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 12);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(274, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 22);
+            this.label1.Size = new System.Drawing.Size(193, 29);
             this.label1.TabIndex = 1;
-            this.label1.Text = "KULLANICI GİRİŞ/ÇIKIŞ KAYITLARI";
+            this.label1.Text = "Tores Log Data";
             // 
             // btnList
             // 
@@ -69,7 +68,7 @@
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(181, 41);
             this.btnList.TabIndex = 2;
-            this.btnList.Text = "Kayıtları Göster";
+            this.btnList.Text = "Show Logs";
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
@@ -79,7 +78,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(181, 41);
             this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Kayıt Sil";
+            this.btnClear.Text = "Delete Log";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -88,32 +87,29 @@
             this.btnDelete.Location = new System.Drawing.Point(397, 315);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(184, 41);
-
             this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Tümünü Temizle";
+            this.btnDelete.Text = "Delete All";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Location = new System.Drawing.Point(767, 354);
+            this.btnExit.Location = new System.Drawing.Point(588, 315);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(110, 35);
+            this.btnExit.Size = new System.Drawing.Size(184, 41);
             this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Çıkış";
+            this.btnExit.Text = "Close";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-
             // 
             // LogDataForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(880, 392);
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ClientSize = new System.Drawing.Size(782, 377);
             this.Controls.Add(this.btnExit);
-
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnList);

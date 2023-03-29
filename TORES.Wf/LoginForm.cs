@@ -25,7 +25,13 @@ namespace TORES.Wf
         private void btnExıt_Click_1(object sender, EventArgs e)
         {
             logoutTime = DateTime.Now;
-            LogMsg();
+            try // En sevdigimsin <3
+            {
+             LogMsg();
+            }
+            catch 
+            {
+            }
             Application.Exit();
         }
 
@@ -34,13 +40,15 @@ namespace TORES.Wf
             connection.Open();
             string username = txtUserName.Text;
             string password = txtUserPass.Text;
-            SqlCommand cmd = new SqlCommand("Select * From datUser where UserName=@userName and UserPass=@userPass", connection); // SQL komut vererek verileri birbirlerini bağladık
+            SqlCommand cmd = new SqlCommand("Select UserID,UserName,UserPass,p.DeptName,FName+' '+LName as Name From datUser d inner join prmDepartment p on p.DeptID=d.DeptID where UserName=@userName and UserPass=@userPass", connection); // SQL komut vererek verileri birbirlerini bağladık
             cmd.Parameters.AddWithValue("@userName", username);
             cmd.Parameters.AddWithValue("@userPass", password);
             SqlDataReader dr = cmd.ExecuteReader(); // bu verileri veritabanından  oku 
             if (dr.Read()) // degerleri okuduysan
             {
                 int id = dr.GetInt32(0);
+                string depName=dr.GetString(3);
+                string nameSurname=dr.GetString(4);
                 userId = id;
                 loginTime = DateTime.Now; // logintime 'a giriş saaatini ve tarihini atadık..
                 //Ana panel formundan bir nesne üret
@@ -50,20 +58,27 @@ namespace TORES.Wf
                 {
                     AdminPanelForm admin = new AdminPanelForm();
                     admin.userId = id;
+                    admin.depName= depName; 
+                    admin.nameSurname= nameSurname;
                     admin.ShowDialog();
+
                 }
                 UserPanelForm user = new UserPanelForm();
-                user.userid= id;
+                user.userIdUP= id;
+                user.depName= depName;
+                user.nameSurname = nameSurname;
                 user.ShowDialog();
+
 
             }
             else
             {
-                dr.Close();
                 errorTime = DateTime.Now;
+                dr.Close();
                 LogErMsg();
-
                 MessageBox.Show("UserName or UserPass Wrong! Please try again.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);// hatalı girişler için mesaj kutusu oluşturduk.
+                
+
             }
             connection.Close();
         }
@@ -86,12 +101,12 @@ namespace TORES.Wf
         {
             string userName = txtUserName.Text;
             message = $"Error Message:{userName} Unauthorized login error";
-            SqlCommand cmd2 = new SqlCommand("Insert into datLog (UserID,LoginDT,LogoutDT,LogNotes) values (@userId,@loginDt,@logoutDt,@logNotes)", connection);
-            cmd2.Parameters.AddWithValue("@userId",31 );
-            cmd2.Parameters.AddWithValue("@loginDt", errorTime);
-            cmd2.Parameters.AddWithValue("@logoutDt", errorTime);
-            cmd2.Parameters.AddWithValue("@logNotes", message);
-            cmd2.ExecuteNonQuery(); // değişiklikleri veritabanına yansıt .. Kaydet gibi
+            SqlCommand cmd3 = new SqlCommand("Insert into datLog (LoginDT,LogoutDT,LogNotes) values (@loginDt,@logoutDt,@logNotes)", connection); 
+            cmd3.Parameters.AddWithValue("@loginDt", errorTime);
+            cmd3.Parameters.AddWithValue("@logoutDt", errorTime);
+            cmd3.Parameters.AddWithValue("@logNotes", message);
+            cmd3.ExecuteNonQuery(); // değişiklikleri veritabanına yansıt .. Kaydet gibi
+            connection.Close();
         }
     }
 }

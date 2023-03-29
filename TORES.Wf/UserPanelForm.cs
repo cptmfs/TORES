@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,12 @@ namespace TORES.Wf
     public partial class UserPanelForm : Form
     {
         public string userStatus = "user";
-        public int userid;
-        
+        public int userIdUP;
+        public string depName;
+        public string nameSurname;
+
+        SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ToresDB;Integrated Security=True"); // burada SQL bağlantı kurduk.
+
         public UserPanelForm()
         {
             InitializeComponent();
@@ -28,7 +33,7 @@ namespace TORES.Wf
         {
             MeetRoomForm mf = new MeetRoomForm();
             mf.userControl = userStatus;
-            mf.userId = userid; 
+            mf.userIdMR = userIdUP; 
             mf.ShowDialog();
             
         }
@@ -36,7 +41,9 @@ namespace TORES.Wf
         private void button5_Click(object sender, EventArgs e)
         {
             ReservationRequestForm rs = new ReservationRequestForm();  
-            rs.userId= userid;
+            rs.userIdRR= userIdUP;
+            rs.nameSurname= nameSurname;
+            rs.depName= depName;
             rs.ShowDialog();
             
         }
@@ -44,8 +51,14 @@ namespace TORES.Wf
         private void button4_Click(object sender, EventArgs e)
         {
             MyRequestForm rf = new MyRequestForm();
-            rf.id= userid;
+            rf.id= userIdUP;
             rf.ShowDialog();
+        }
+
+        private void UserPanelForm_Load(object sender, EventArgs e)
+        {
+
+            lblUserInfo.Text = nameSurname+" / "+depName;
         }
     }
 }

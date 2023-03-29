@@ -13,6 +13,8 @@ namespace TORES.Wf
     public partial class AdminPanelForm : Form
     {
         public int userId;
+        public string depName;
+        public string nameSurname;
         
         public AdminPanelForm()
         {
@@ -36,6 +38,7 @@ namespace TORES.Wf
             //Toplantı Odası
             MeetRoomForm mf = new MeetRoomForm();
             mf.userControl = userStatus;
+            mf.userIdMR= userId;
             mf.ShowDialog();
         }
 
@@ -50,7 +53,9 @@ namespace TORES.Wf
         {
             //Rezervasyon listesi
             ReservationRequestForm requestForm = new ReservationRequestForm();
-            requestForm.userId = this.userId;
+            requestForm.userIdRR = this.userId;
+            requestForm.depName = this.depName;
+            requestForm.nameSurname = this.nameSurname;
             requestForm.ShowDialog();
 
         }

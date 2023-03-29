@@ -85,7 +85,7 @@ namespace TORES.Wf
         private void btnNewReq_Click(object sender, EventArgs e)
         {
             ReservationRequestForm rs = new ReservationRequestForm();
-            rs.userId = id;
+            rs.userIdRR = id;
             rs.ShowDialog();
             this.Close();
 
