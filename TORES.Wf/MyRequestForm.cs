@@ -17,7 +17,7 @@ namespace TORES.Wf
         SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ToresDB;Integrated Security=True");
 
         public int id;
-       
+
         public MyRequestForm()
         {
 
@@ -32,7 +32,7 @@ namespace TORES.Wf
             SqlDataAdapter da = new SqlDataAdapter(cmd);                                                            // veri çekmek için data adater kullanılıyor.
             DataSet ds = new DataSet();
             da.Fill(ds);                                                                                            // ds nin içine yazdırılıyor..
-            dataGridView1.DataSource= ds.Tables[0];                                                                  
+            dataGridView1.DataSource = ds.Tables[0];
             connection.Close();
         }
 
@@ -60,20 +60,30 @@ namespace TORES.Wf
             DialogResult dialogResult = MessageBox.Show("Toplantı isteğinizi iptal etmek istiyormusunuz ?", "İşlem Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                connection.Open();
-                SqlCommand cmd2 = new SqlCommand("Delete from datReservation where ResReqID=@ResReqID",connection);
-                cmd2.Parameters.AddWithValue("@ResReqID", dataGridView1.CurrentRow.Cells[0].Value);
-                cmd2.ExecuteNonQuery();
-                connection.Close() ;
-                MessageBox.Show("Seçtiğiniz Toplantı rezervasyonunuz iptal edilmiştir.");
-                GridDoldur();
 
+
+                int status = int.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
+
+                if (status == 0)
+                {
+                    connection.Open();
+                    SqlCommand cmd2 = new SqlCommand("Delete from datReservation where ResReqID=@ResReqID and ResStatus=0", connection);
+                    cmd2.Parameters.AddWithValue("@ResReqID", dataGridView1.CurrentRow.Cells[0].Value);
+                    cmd2.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Seçtiğiniz Toplantı rezervasyonunuz iptal edilmiştir.");
+                    GridDoldur();
+                }
+                else
+                {
+                    MessageBox.Show("Onaylanan Rezervasyon iptal edilemez lütfen kurumumuz ile iletişime geçiniz.");
+                }
 
             }
-      
+
 
         }
 
 
     }
-} 
+}
