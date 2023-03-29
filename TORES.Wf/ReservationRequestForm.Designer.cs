@@ -45,14 +45,14 @@
             this.cbxRooms = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSendRequest
             // 
             this.btnSendRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSendRequest.Location = new System.Drawing.Point(619, 576);
-            this.btnSendRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSendRequest.Margin = new System.Windows.Forms.Padding(4);
             this.btnSendRequest.Name = "btnSendRequest";
             this.btnSendRequest.Size = new System.Drawing.Size(132, 85);
             this.btnSendRequest.TabIndex = 33;
@@ -75,7 +75,7 @@
             // 
             this.txtDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtDetails.Location = new System.Drawing.Point(223, 370);
-            this.txtDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDetails.Margin = new System.Windows.Forms.Padding(4);
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.Size = new System.Drawing.Size(527, 171);
@@ -98,7 +98,7 @@
             this.cbxMeetingEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxMeetingEnd.FormattingEnabled = true;
             this.cbxMeetingEnd.Location = new System.Drawing.Point(520, 288);
-            this.cbxMeetingEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxMeetingEnd.Margin = new System.Windows.Forms.Padding(4);
             this.cbxMeetingEnd.Name = "cbxMeetingEnd";
             this.cbxMeetingEnd.Size = new System.Drawing.Size(229, 33);
             this.cbxMeetingEnd.TabIndex = 29;
@@ -109,10 +109,11 @@
             this.cbxMeetingStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxMeetingStart.FormattingEnabled = true;
             this.cbxMeetingStart.Location = new System.Drawing.Point(223, 288);
-            this.cbxMeetingStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxMeetingStart.Margin = new System.Windows.Forms.Padding(4);
             this.cbxMeetingStart.Name = "cbxMeetingStart";
             this.cbxMeetingStart.Size = new System.Drawing.Size(232, 33);
             this.cbxMeetingStart.TabIndex = 28;
+            this.cbxMeetingStart.SelectedIndexChanged += new System.EventHandler(this.cbxMeetingStart_SelectedIndexChanged);
             // 
             // lblStartEnd
             // 
@@ -127,10 +128,11 @@
             // 
             // dtpMeetingDate
             // 
+            this.dtpMeetingDate.CustomFormat = "yyyy-MM-dd";
             this.dtpMeetingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpMeetingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMeetingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpMeetingDate.Location = new System.Drawing.Point(223, 212);
-            this.dtpMeetingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpMeetingDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpMeetingDate.Name = "dtpMeetingDate";
             this.dtpMeetingDate.Size = new System.Drawing.Size(527, 30);
             this.dtpMeetingDate.TabIndex = 26;
@@ -183,7 +185,7 @@
             // 
             this.btnRoomFeatures.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRoomFeatures.Location = new System.Drawing.Point(605, 102);
-            this.btnRoomFeatures.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRoomFeatures.Margin = new System.Windows.Forms.Padding(4);
             this.btnRoomFeatures.Name = "btnRoomFeatures";
             this.btnRoomFeatures.Size = new System.Drawing.Size(145, 76);
             this.btnRoomFeatures.TabIndex = 21;
@@ -207,7 +209,7 @@
             this.cbxRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxRooms.FormattingEnabled = true;
             this.cbxRooms.Location = new System.Drawing.Point(223, 122);
-            this.cbxRooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxRooms.Margin = new System.Windows.Forms.Padding(4);
             this.cbxRooms.Name = "cbxRooms";
             this.cbxRooms.Size = new System.Drawing.Size(307, 33);
             this.cbxRooms.TabIndex = 19;
@@ -216,7 +218,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCancel.Location = new System.Drawing.Point(693, 725);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(148, 55);
             this.btnCancel.TabIndex = 18;
@@ -234,22 +236,22 @@
             this.lblId.TabIndex = 34;
             this.lblId.Text = "label1";
             // 
-            // checkBox1
+            // button1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(416, 581);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 20);
-            this.checkBox1.TabIndex = 35;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(654, 258);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ReservationRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 830);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnSendRequest);
             this.Controls.Add(this.lblDetailsOptional);
@@ -268,7 +270,7 @@
             this.Controls.Add(this.cbxRooms);
             this.Controls.Add(this.btnCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReservationRequestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservationRequestForm";
@@ -297,6 +299,6 @@
         private System.Windows.Forms.ComboBox cbxRooms;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

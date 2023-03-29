@@ -30,10 +30,7 @@ namespace TORES.Wf
         {
             InitializeComponent();
         }
-
-
-
-
+       
         private void btnRoomFeatures_Click(object sender, EventArgs e)
         {
             // MeetRoomForm 'a yönlendirecek
@@ -59,18 +56,16 @@ namespace TORES.Wf
 
             for (int i = 9; i <= 19; i++)   // cbxMeetingStart ve cbxMeetingEnd 09:00 - 18:00 arası dolduruldu
             {
-                cbxMeetingStart.Items.Add(i + ":00");
+                cbxMeetingStart.Items.Add(i +":00" );
 
 
-                cbxMeetingEnd.Items.Add(i + ":00");
-
-
-
+                cbxMeetingEnd.Items.Add((i +1)+":00"); //":00"
 
             }
-
             cbxMeetingStart.SelectedIndex = 0;      // saatleri ilk indekste seçili
             cbxMeetingEnd.SelectedIndex = 0;
+
+
 
             #endregion
 
@@ -79,51 +74,21 @@ namespace TORES.Wf
             GetReservationInfo(); // server'dan rezervasyon bilgilerini çekti
 
 
-
-
             // Kullanıcıya göre lblUserInfo Ad Soyad - Departman olarak değişecek
             // oda isimlerine göre rezerve edilen tarihler çekilecek - db den
             // tarih bilgisi girilecek bu bilgilere göre db ki tablo çekilecek (dbo.dtReservation)
             // yeni girilen ve önceden kayıtlı olan bilgiler kıyaslanacak
             // uygun saatler comboda gösterilecek ? 
 
-
-
-
             lblId.Text = userId.ToString();
             
         }
-
-        #region tarih karşılaştırma
-        /* datReservation'dan toplantı başlangıç ve bitiş tarihleri alınacak
-         * bunlar bir tabloda tutulacak
-         * seçilmiş olan başlangıç ve bitiş tarih+saat BindDateTime() ile birleşecek 
-         * bunlar serverdan gelen tarih tablosuyla kıyaslanacak 
-         * string olarak tutulan tarih bilgisinin birbirine eşitliği kontrol edilecek
-         * eşitse o tarih dolu uyarısı verilecek
-         
-         
-         */
-        #endregion
-
-
-        private string BindDateTime(string date,string time)
+        private string BindTime(string time)
         {
-            // burada amacım gelen tarih ve saat bilgilerini birleştirmek. Format -> (GGAAYYYYSSDD)
-
-            date  = dtpMeetingDate.Text  ;   // dtpMeetingDate teki tarihi string olarak aldım
             
-            string newDate = ""; // gg.aa.yyyy formatında gelen date değişkeni arasındaki noktaları silip atacağım yeni değişken           
             string newTime = "";
-            for (int i = 0; i < date.Length; i++)
-            {
-                if (date[i] != '.' )
-                {
-                    newDate += date[i];
-                }
-
-            }
-            for (int i = 0; i < time.Length; i++) // cboxdaki saatdeğerlerinin arasındaki ':' i kaldırmak
+            
+            for (int i = 0; i < time.Length; i++) // cboxdaki saat değerlerinin arasındaki ':' i kaldırmak
             {
 
                 if (time[i] != ':')
@@ -132,14 +97,11 @@ namespace TORES.Wf
                 }
             }
 
-            newDate += newTime;
 
+            //int.Parse(newTime);
+            return newTime;
 
-            return newDate;
-            
         }
-        
-        
 
         private void GetRooms()
         {
@@ -178,27 +140,48 @@ namespace TORES.Wf
         {
             // Server'dan datReservtion u çekecek
 
-            using (SqlConnection con = new SqlConnection(conString))
-            {
-                vsSQLCommand = "SELECT * FROM datReservation";
+            //using (SqlConnection con = new SqlConnection(conString))
+            //{
+            //    vsSQLCommand = "SELECT ResRoomID,ResDate,ResStartDT,ResEndDT,ResStatus ";
+            //    vsSQLCommand += "FROM datReservation WHERE ResStatus=1 ";
 
-                using (SqlCommand cmd = new SqlCommand(vsSQLCommand, con))
-                {
-                    cmd.CommandType = CommandType.Text;
 
-                    using(SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        using(DataSet dSet = new DataSet())
-                        {
-                            sda.Fill(dSet);
+            //    using (SqlCommand cmd = new SqlCommand(vsSQLCommand, con))
+            //    {
+            //        cmd.CommandType = CommandType.Text;
 
-                            
-                            
+            //        using(SqlDataAdapter sda = new SqlDataAdapter(cmd))
+            //        {
+            //            using(DataSet dSet = new DataSet())
+            //            {
+            //                sda.Fill(dSet);
 
-                        }
-                    }
-                }
-            }
+            //                //DataTable dataTable= dSet.Tables[0];
+
+            //                // dset table da serverda isteği kabul edilmiş olan gündeki saatler enable false yapılacak 
+            //                // sql de sütun eklemede problem yaşadım.
+            //                // RoomId -> onaylı tarihler -> saatler 
+            //                // bu sırada kontrol sağlanması lazım  ve bunun bir döngüyle olması lazım
+            //                // ama döngü nerde bitecek nasıl bir komut olacak çözemedim
+
+
+
+
+
+
+            //                ;
+            //                for (int roomCount = 0; roomCount < dSet.Tables[0].Rows.Count; roomCount++)   // oda sayısı kadar dönüyor bir nevi id si kadar
+            //                {
+            //                    for (int resDate = 0; resDate < dSet.Tables[0].Columns.Count; resDate++)
+            //                    {
+            //                        label1.Text = dSet.Tables[0].Columns.ToString();
+            //                    }
+            //                }
+
+            //            }
+            //        }
+            //    }
+            //}
 
         }
 
@@ -210,9 +193,7 @@ namespace TORES.Wf
         private void btnSendRequest_Click(object sender, EventArgs e)
         {
             // butona basıldığında admine oda rezervasyon isteği gönderilecek
-            string dateStart = BindDateTime(dtpMeetingDate.Text,cbxMeetingStart.SelectedItem.ToString());
-            string dateEnd= BindDateTime(dtpMeetingDate.Text, cbxMeetingEnd.SelectedItem.ToString());
-
+            
             #region Admine oda rezervasyon isteği gönderme
 
             if (cbxRooms.SelectedIndex < 1)
@@ -227,18 +208,16 @@ namespace TORES.Wf
                 }
                 else
                 {
-
-
-
                     using (SqlConnection con = new SqlConnection(conString))  // TORESDB bağlantı
                     {
-                        vsSQLCommand = "Insert into datReservation (ResRoomID,ResStartDT,ResEndDT,ResUserID,ResDesc,ResStatus) values (@resRoomId,@resStartDt,@resEndDt,@resUserId,@resDesc,@resStatus)";
+                        vsSQLCommand = "Insert into datReservation (ResRoomID,ResDate,ResStartDT,ResEndDT,ResUserID,ResDesc,ResStatus) values (@resRoomId,@resDate,@resStartDt,@resEndDt,@resUserId,@resDesc,@resStatus)";
                         using (SqlCommand cmd2 = new SqlCommand(vsSQLCommand, con))
                         {
                             cmd2.CommandType = CommandType.Text;
                             cmd2.Parameters.AddWithValue("@resRoomId", cbxRooms.SelectedValue);
-                            cmd2.Parameters.AddWithValue("@resStartDt", dateStart);
-                            cmd2.Parameters.AddWithValue("@resEndDt", dateEnd);
+                            cmd2.Parameters.AddWithValue("@resDate", dtpMeetingDate.Value);
+                            cmd2.Parameters.AddWithValue("@resStartDt", BindTime(cbxMeetingStart.SelectedItem.ToString()));
+                            cmd2.Parameters.AddWithValue("@resEndDt", BindTime(cbxMeetingEnd.SelectedItem.ToString()));
                             cmd2.Parameters.AddWithValue("@resUserId", userId);
                             cmd2.Parameters.AddWithValue("@resDesc", txtDetails.Text);
                             cmd2.Parameters.AddWithValue("@resStatus", 0);
@@ -253,6 +232,70 @@ namespace TORES.Wf
                 }
             
             #endregion
+
+        }
+
+        private void cbxMeetingStart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        //    for (int i = (int)cbxMeetingStart.SelectedValue; i <= 19; i++)   // cbxMeetingStart ve cbxMeetingEnd 09:00 - 18:00 arası dolduruldu
+        //    {
+        //        cbxMeetingEnd.Items.Add(i);
+
+
+        //        //cbxMeetingEnd.Items.Add(i +1+ ":00");
+
+
+        //    }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int basSaat, sonSaat;
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("Select ResStartDT,ResEndDT From datReservation where ResRoomID=@roomId and ResDate=@meetDt and ResStatus=1", connection);
+            cmd.Parameters.AddWithValue("@roomId", cbxRooms.SelectedValue);
+            cmd.Parameters.AddWithValue("@meetDt", dtpMeetingDate.Text);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                basSaat =  (int)dr["ResStartDT"];
+                sonSaat = (int)dr["ResEndDT"];
+                for (int i = 0; i <= cbxMeetingStart.Items.Count; i++)
+
+
+                {
+
+                    BindTime(cbxMeetingStart.Items.ToString());
+                    if (BindTime(cbxMeetingStart.Items.ToString()).Contains(basSaat.ToString()))
+                    {
+                        cbxMeetingStart.Items.Remove(basSaat);
+                        cbxMeetingStart.Items.Remove(basSaat + 100);
+                    }
+
+                    //cbxMeetingStart.Items.IndexOf(i)
+
+                    int h = int.Parse(cbxMeetingStart.GetItemText(i));
+                    //cbxMeetingStart.Items.Contains(basSaat.ToString())
+
+                    
+
+
+                }
+                for (int i = 0; i <= cbxMeetingEnd.Items.Count; i++)
+                {
+                    if (cbxMeetingEnd.Items.Contains(sonSaat))
+                    {
+                        cbxMeetingEnd.Items.Remove(sonSaat);
+                        cbxMeetingEnd.Items.Remove(sonSaat - 100);
+                    }
+
+                }
+            }
+            dr.Close();
+            connection.Close();
+
+
 
         }
     }
