@@ -77,14 +77,13 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(88, 40);
             this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "Kapat";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnOnayla
             // 
             this.btnOnayla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnOnayla.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnOnayla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOnayla.Location = new System.Drawing.Point(106, 404);
             this.btnOnayla.Name = "btnOnayla";
@@ -100,7 +99,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 24);
+            this.label1.Size = new System.Drawing.Size(176, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Onay Bekleyenler  ";
             // 
@@ -110,7 +109,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 200);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 24);
+            this.label2.Size = new System.Drawing.Size(154, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Onay Verilenler ";
             // 
@@ -126,6 +125,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgwOnayBekleyen);
             this.Controls.Add(this.dgwOnayVerilen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PendingRequestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PendingRequestForm";

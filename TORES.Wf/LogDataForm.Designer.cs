@@ -49,6 +49,7 @@
             this.dgwLog.Name = "dgwLog";
             this.dgwLog.ReadOnly = true;
             this.dgwLog.RowHeadersVisible = false;
+            this.dgwLog.RowHeadersWidth = 45;
             this.dgwLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwLog.Size = new System.Drawing.Size(760, 274);
             this.dgwLog.TabIndex = 0;
@@ -58,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(258, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 20);
+            this.label1.Size = new System.Drawing.Size(299, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "KULLANICI GİRİŞ/ÇIKIŞ KAYITLARI";
             // 
@@ -107,7 +108,7 @@
             // 
             // LogDataForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(880, 392);
@@ -119,6 +120,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgwLog);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LogDataForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgwMeetRoom = new System.Windows.Forms.DataGridView();
             this.btnRequest = new System.Windows.Forms.Button();
             this.chckbVOIP = new System.Windows.Forms.CheckBox();
             this.chckbIPTV = new System.Windows.Forms.CheckBox();
@@ -62,27 +61,20 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnGetir = new System.Windows.Forms.Button();
             this.gbxRoomSpec = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwMeetRoom)).BeginInit();
+            this.dgwMeetRoom = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomCapacity)).BeginInit();
             this.grpProperty.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.gbxRoomSpec.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwMeetRoom)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgwMeetRoom
-            // 
-            this.dgwMeetRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwMeetRoom.Location = new System.Drawing.Point(12, 302);
-            this.dgwMeetRoom.Name = "dgwMeetRoom";
-            this.dgwMeetRoom.Size = new System.Drawing.Size(289, 148);
-            this.dgwMeetRoom.TabIndex = 14;
             // 
             // btnRequest
             // 
             this.btnRequest.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRequest.Location = new System.Drawing.Point(336, 413);
             this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(99, 49);
+            this.btnRequest.Size = new System.Drawing.Size(107, 49);
             this.btnRequest.TabIndex = 12;
             this.btnRequest.Text = "Rezervasyon İsteği";
             this.btnRequest.UseVisualStyleBackColor = true;
@@ -148,15 +140,15 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(24, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 19);
+            this.label3.Size = new System.Drawing.Size(83, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Kapasite :";
             // 
             // nudRoomCapacity
             // 
-            this.nudRoomCapacity.Location = new System.Drawing.Point(103, 29);
+            this.nudRoomCapacity.Location = new System.Drawing.Point(105, 29);
             this.nudRoomCapacity.Name = "nudRoomCapacity";
-            this.nudRoomCapacity.Size = new System.Drawing.Size(49, 26);
+            this.nudRoomCapacity.Size = new System.Drawing.Size(47, 28);
             this.nudRoomCapacity.TabIndex = 0;
             // 
             // grpProperty
@@ -208,7 +200,7 @@
             // logKayıtlarıToolStripMenuItem
             // 
             this.logKayıtlarıToolStripMenuItem.Name = "logKayıtlarıToolStripMenuItem";
-            this.logKayıtlarıToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.logKayıtlarıToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.logKayıtlarıToolStripMenuItem.Text = "Log Kayıtları";
             // 
             // btnCancel
@@ -216,7 +208,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCancel.Location = new System.Drawing.Point(616, 425);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 33);
+            this.btnCancel.Size = new System.Drawing.Size(91, 33);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Vazgeç";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -225,17 +217,17 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(210, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(238, 6);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(210, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(238, 6);
             // 
             // odaListeToolStripMenuItem
             // 
             this.odaListeToolStripMenuItem.Name = "odaListeToolStripMenuItem";
-            this.odaListeToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.odaListeToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.odaListeToolStripMenuItem.Text = "Oda Listesi";
             // 
             // adminToolStripMenuItem
@@ -247,41 +239,41 @@
             this.toolStripSeparator4,
             this.logKayıtlarıToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(66, 25);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // rezervasyonİstekleriToolStripMenuItem
             // 
             this.rezervasyonİstekleriToolStripMenuItem.Name = "rezervasyonİstekleriToolStripMenuItem";
-            this.rezervasyonİstekleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.rezervasyonİstekleriToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.rezervasyonİstekleriToolStripMenuItem.Text = "Rezervasyon İstekleri";
             // 
             // isteklerimToolStripMenuItem
             // 
             this.isteklerimToolStripMenuItem.Name = "isteklerimToolStripMenuItem";
-            this.isteklerimToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.isteklerimToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.isteklerimToolStripMenuItem.Text = "İsteklerim";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(199, 6);
             // 
             // yeniİstekToolStripMenuItem
             // 
             this.yeniİstekToolStripMenuItem.Name = "yeniİstekToolStripMenuItem";
-            this.yeniİstekToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.yeniİstekToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.yeniİstekToolStripMenuItem.Text = "Yeni İstek";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(199, 6);
             // 
             // toplantıOdalarıToolStripMenuItem
             // 
             this.toplantıOdalarıToolStripMenuItem.Name = "toplantıOdalarıToolStripMenuItem";
-            this.toplantıOdalarıToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.toplantıOdalarıToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.toplantıOdalarıToolStripMenuItem.Text = "Toplantı Odaları";
             // 
             // rezervasyonToolStripMenuItem
@@ -293,13 +285,13 @@
             this.toolStripSeparator2,
             this.isteklerimToolStripMenuItem});
             this.rezervasyonToolStripMenuItem.Name = "rezervasyonToolStripMenuItem";
-            this.rezervasyonToolStripMenuItem.Size = new System.Drawing.Size(96, 23);
+            this.rezervasyonToolStripMenuItem.Size = new System.Drawing.Size(109, 25);
             this.rezervasyonToolStripMenuItem.Text = "Rezervasyon";
             // 
             // çıkışToolStripMenuItem
             // 
             this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(118, 26);
             this.çıkışToolStripMenuItem.Text = "Çıkış";
             // 
             // programToolStripMenuItem
@@ -307,12 +299,13 @@
             this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.çıkışToolStripMenuItem});
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
-            this.programToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
+            this.programToolStripMenuItem.Size = new System.Drawing.Size(80, 25);
             this.programToolStripMenuItem.Text = "Program";
             // 
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.programToolStripMenuItem,
             this.rezervasyonToolStripMenuItem,
@@ -320,7 +313,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(741, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(741, 29);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -331,7 +324,7 @@
             this.label1.Location = new System.Drawing.Point(47, 92);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 21);
+            this.label1.Size = new System.Drawing.Size(189, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "TOPLANTI ODALARI";
             // 
@@ -359,7 +352,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUpdate.Location = new System.Drawing.Point(616, 361);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 33);
+            this.btnUpdate.Size = new System.Drawing.Size(91, 33);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -391,10 +384,20 @@
             this.gbxRoomSpec.TabStop = false;
             this.gbxRoomSpec.Text = "Oda Özellikleri";
             // 
+            // dgwMeetRoom
+            // 
+            this.dgwMeetRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwMeetRoom.Location = new System.Drawing.Point(12, 302);
+            this.dgwMeetRoom.Name = "dgwMeetRoom";
+            this.dgwMeetRoom.RowHeadersWidth = 45;
+            this.dgwMeetRoom.Size = new System.Drawing.Size(289, 148);
+            this.dgwMeetRoom.TabIndex = 14;
+            // 
             // MeetRoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(180)))));
             this.ClientSize = new System.Drawing.Size(741, 553);
             this.Controls.Add(this.gbxRoomSpec);
             this.Controls.Add(this.btnGetir);
@@ -413,7 +416,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MeetRoomForm";
             this.Load += new System.EventHandler(this.MeetRoomForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgwMeetRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomCapacity)).EndInit();
             this.grpProperty.ResumeLayout(false);
             this.grpProperty.PerformLayout();
@@ -421,14 +423,13 @@
             this.menuStrip1.PerformLayout();
             this.gbxRoomSpec.ResumeLayout(false);
             this.gbxRoomSpec.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwMeetRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgwMeetRoom;
         private System.Windows.Forms.Button btnRequest;
         private System.Windows.Forms.CheckBox chckbVOIP;
         private System.Windows.Forms.CheckBox chckbIPTV;
@@ -462,5 +463,6 @@
         private System.Windows.Forms.Button btnGetir;
         private System.Windows.Forms.CheckBox chckbKlima;
         private System.Windows.Forms.GroupBox gbxRoomSpec;
+        private System.Windows.Forms.DataGridView dgwMeetRoom;
     }
 }
