@@ -67,8 +67,8 @@ namespace TORES.Wf
                 user.userIdUP= id;
                 user.depName= depName;
                 user.nameSurname = nameSurname;
-                user.ShowDialog();
-
+                this.Hide();
+                user.Show();
 
             }
             else
