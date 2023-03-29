@@ -45,7 +45,6 @@
             this.cbxRooms = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
-            this.btnSaat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSendRequest
@@ -120,9 +119,7 @@
             // 
             // dtpMeetingDate
             // 
-            this.dtpMeetingDate.CustomFormat = "yyyy-MM-dd";
             this.dtpMeetingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpMeetingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpMeetingDate.Location = new System.Drawing.Point(167, 172);
             this.dtpMeetingDate.Name = "dtpMeetingDate";
             this.dtpMeetingDate.Size = new System.Drawing.Size(396, 26);
@@ -218,23 +215,11 @@
             this.lblId.TabIndex = 34;
             this.lblId.Text = "label1";
             // 
-            // btnSaat
-            // 
-            this.btnSaat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaat.Location = new System.Drawing.Point(381, 204);
-            this.btnSaat.Name = "btnSaat";
-            this.btnSaat.Size = new System.Drawing.Size(182, 25);
-            this.btnSaat.TabIndex = 35;
-            this.btnSaat.Text = "Saatleri Göster";
-            this.btnSaat.UseVisualStyleBackColor = true;
-            this.btnSaat.Click += new System.EventHandler(this.btnSaat_Click);
-            // 
             // ReservationRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 674);
-            this.Controls.Add(this.btnSaat);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnSendRequest);
             this.Controls.Add(this.lblDetailsOptional);
@@ -281,6 +266,5 @@
         private System.Windows.Forms.ComboBox cbxRooms;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Button btnSaat;
     }
 }

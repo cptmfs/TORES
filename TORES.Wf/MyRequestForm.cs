@@ -39,7 +39,7 @@ namespace TORES.Wf
 
         private void MyRequestForm_Load(object sender, EventArgs e)
         {
-            GridDoldur();
+            GridDoldur(); // ** GridFill **
         }
 
 
@@ -52,10 +52,10 @@ namespace TORES.Wf
 
         private void button4_Click(object sender, EventArgs e)
         {
-            IstekIptal();
+            IstekIptal(); // ** RequestCancel ** 
         }
 
-        private void IstekIptal()
+        private void IstekIptal()  // ** RequestCancel ** 
         {
             DialogResult dialogResult = MessageBox.Show("Toplantı isteğinizi iptal etmek istiyormusunuz ?", "İşlem Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
@@ -66,7 +66,7 @@ namespace TORES.Wf
                 cmd2.ExecuteNonQuery();
                 connection.Close() ;
                 MessageBox.Show("Seçtiğiniz Toplantı rezervasyonunuz iptal edilmiştir.");
-                GridDoldur();
+                GridDoldur(); //GridFill
 
 
             }
