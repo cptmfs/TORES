@@ -57,7 +57,6 @@ namespace TORES.Wf
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             connection.Open();
             SqlCommand cmd2 = new SqlCommand("DELETE FROM datLog WHERE LogID=@LogID", connection);
             cmd2.Parameters.AddWithValue("@LogID", dgwLog.CurrentRow.Cells[0].Value);
@@ -68,7 +67,7 @@ namespace TORES.Wf
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
