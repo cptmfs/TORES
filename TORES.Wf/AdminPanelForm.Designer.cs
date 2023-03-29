@@ -65,10 +65,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 20.25F);
             this.label1.Location = new System.Drawing.Point(79, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 31);
+            this.label1.Size = new System.Drawing.Size(169, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Room List";
             // 
@@ -85,10 +85,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 20.25F);
             this.label2.Location = new System.Drawing.Point(12, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(269, 31);
+            this.label2.Size = new System.Drawing.Size(329, 35);
             this.label2.TabIndex = 1;
             this.label2.Text = "Reservation Request";
             // 
@@ -105,10 +105,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 20.25F);
             this.label4.Location = new System.Drawing.Point(80, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 31);
+            this.label4.Size = new System.Drawing.Size(198, 35);
             this.label4.TabIndex = 2;
             this.label4.Text = "Meet Rooms";
             // 
@@ -125,10 +125,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 20.25F);
             this.label3.Location = new System.Drawing.Point(85, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 31);
+            this.label3.Size = new System.Drawing.Size(149, 35);
             this.label3.TabIndex = 1;
             this.label3.Text = "Log Data";
             // 
@@ -137,7 +137,7 @@
             this.pnlExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(59)))), ((int)(((byte)(87)))));
             this.pnlExit.Controls.Add(this.label6);
             this.pnlExit.Location = new System.Drawing.Point(15, 399);
-            this.pnlExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlExit.Margin = new System.Windows.Forms.Padding(2);
             this.pnlExit.Name = "pnlExit";
             this.pnlExit.Size = new System.Drawing.Size(647, 101);
             this.pnlExit.TabIndex = 5;
@@ -150,7 +150,7 @@
             this.label6.Location = new System.Drawing.Point(292, 39);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 31);
+            this.label6.Size = new System.Drawing.Size(79, 35);
             this.label6.TabIndex = 1;
             this.label6.Text = "Exit";
             // 
@@ -167,10 +167,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Cooper Black", 20.25F);
             this.label5.Location = new System.Drawing.Point(85, 47);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 31);
+            this.label5.Size = new System.Drawing.Size(142, 35);
             this.label5.TabIndex = 1;
             this.label5.Text = "Support";
             // 
@@ -202,7 +202,7 @@
             this.label7.Location = new System.Drawing.Point(39, 46);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(244, 31);
+            this.label7.Size = new System.Drawing.Size(270, 35);
             this.label7.TabIndex = 1;
             this.label7.Text = "Pending Request";
             // 

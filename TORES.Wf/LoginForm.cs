@@ -29,7 +29,7 @@ namespace TORES.Wf
             Application.Exit();
         }
 
-        private void btnSıgnIn_Click_1(object sender, EventArgs e)
+        private void btnSıgnIn_Click_1(object sender, EventArgs e) //btnSignIn_Click
         {
             connection.Open();
             string username = txtUserName.Text;
