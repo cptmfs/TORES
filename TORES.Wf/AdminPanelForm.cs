@@ -28,10 +28,7 @@ namespace TORES.Wf
 
         private void pnlSupport_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(" Novas Works Toplantı Odaları Rezervasyon sistemindesiniz. TORES sizlerin toplantılarınızın çakışmasını engelemek için yapılmıştır. " +
-              "\r\n Admin girişi için;\r\n Kullanıcı Adı = Admin" +
-              "\r\n Şifre = Q1w2e3" +
-              "\r\n EMail = umit.karacivi@outlook.com","Support Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(" ----  TORES  ----\r\n Novas Works Şirketi Toplantı Odaları Rezervasyon Sistemi.\r\nAdmin girişi için;\r\nKullanıcı Adı = Admin\r\n Şifre = Q1w2e3\r\nEmail = umit.karacivi@outlook.com","Support Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void pnlMeetRooms_Click(object sender, EventArgs e)

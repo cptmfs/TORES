@@ -79,8 +79,6 @@ namespace TORES.Wf
         private void MeetRoomForm_Load(object sender, EventArgs e)
         {
             RoomLoad();
-            DatagwLoad();
-            CheckedListBoxLoad();
 
 
             if (userControl == "user")
@@ -94,16 +92,9 @@ namespace TORES.Wf
             checkedListBox1.Visible = false;
 
         }
-        private void CheckedListBoxLoad()
-        {
-
-        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            SqlCommand cmd3 = new SqlCommand("Delete from jnkRoomSpec where ");
-            connection.Close();
         }
 
 
@@ -216,7 +207,6 @@ namespace TORES.Wf
             res.ShowDialog();
             this.Close();
         }
-
         private void chckbProjection_CheckedChanged(object sender, EventArgs e)
         {
             connection.Open();
