@@ -59,12 +59,11 @@ namespace TORES.Wf
                 cbxMeetingStart.Items.Add(i +":00" );
 
 
-                cbxMeetingEnd.Items.Add((i +1)+":00"); //":00"
+                cbxMeetingEnd.Items.Add((i +1)+":00"); 
 
             }
             cbxMeetingStart.SelectedIndex = 0;      // saatleri ilk indekste seçili
             cbxMeetingEnd.SelectedIndex = 0;
-
 
 
             #endregion
@@ -75,6 +74,9 @@ namespace TORES.Wf
 
 
             // Kullanıcıya göre lblUserInfo Ad Soyad - Departman olarak değişecek
+
+            
+
             // oda isimlerine göre rezerve edilen tarihler çekilecek - db den
             // tarih bilgisi girilecek bu bilgilere göre db ki tablo çekilecek (dbo.dtReservation)
             // yeni girilen ve önceden kayıtlı olan bilgiler kıyaslanacak
@@ -97,8 +99,6 @@ namespace TORES.Wf
                 }
             }
 
-
-            //int.Parse(newTime);
             return newTime;
 
         }
@@ -238,15 +238,7 @@ namespace TORES.Wf
         private void cbxMeetingStart_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-        //    for (int i = (int)cbxMeetingStart.SelectedValue; i <= 19; i++)   // cbxMeetingStart ve cbxMeetingEnd 09:00 - 18:00 arası dolduruldu
-        //    {
-        //        cbxMeetingEnd.Items.Add(i);
-
-
-        //        //cbxMeetingEnd.Items.Add(i +1+ ":00");
-
-
-        //    }
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -262,24 +254,17 @@ namespace TORES.Wf
                 basSaat =  (int)dr["ResStartDT"];
                 sonSaat = (int)dr["ResEndDT"];
                 for (int i = 0; i <= cbxMeetingStart.Items.Count; i++)
-
-
                 {
 
-                    BindTime(cbxMeetingStart.Items.ToString());
+                    BindTime(cbxMeetingStart.Items.ToString()); // : yi kaldırıyor.
+
+                    // Burada if e girmiyor 
+                    // koşulu dikkatli yazmamız lazım 
                     if (BindTime(cbxMeetingStart.Items.ToString()).Contains(basSaat.ToString()))
                     {
                         cbxMeetingStart.Items.Remove(basSaat);
                         cbxMeetingStart.Items.Remove(basSaat + 100);
                     }
-
-                    //cbxMeetingStart.Items.IndexOf(i)
-
-                    int h = int.Parse(cbxMeetingStart.GetItemText(i));
-                    //cbxMeetingStart.Items.Contains(basSaat.ToString())
-
-                    
-
 
                 }
                 for (int i = 0; i <= cbxMeetingEnd.Items.Count; i++)
@@ -292,11 +277,12 @@ namespace TORES.Wf
 
                 }
             }
+
             dr.Close();
             connection.Close();
 
-
-
+            /*sql üzerinde start/end saatleri time(0) a dönüştürüp.
+            formda sql de olduğu gibi 'substring' metoduda benzeyen bir metot bulup saatin ilk iki karakterini karşılaştırabiliriz ama saat 10 da iş başı yapılması koşuluyla*/
         }
     }
 }
