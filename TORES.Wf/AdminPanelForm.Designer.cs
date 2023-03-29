@@ -54,7 +54,7 @@
             this.pnlRoomList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(237)))), ((int)(((byte)(159)))));
             this.pnlRoomList.Controls.Add(this.label1);
             this.pnlRoomList.Location = new System.Drawing.Point(16, 15);
-            this.pnlRoomList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlRoomList.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRoomList.Name = "pnlRoomList";
             this.pnlRoomList.Size = new System.Drawing.Size(429, 153);
             this.pnlRoomList.TabIndex = 0;
@@ -76,11 +76,12 @@
             this.pnlRezReq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.pnlRezReq.Controls.Add(this.label2);
             this.pnlRezReq.Location = new System.Drawing.Point(453, 15);
-            this.pnlRezReq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlRezReq.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRezReq.Name = "pnlRezReq";
             this.pnlRezReq.Size = new System.Drawing.Size(429, 153);
             this.pnlRezReq.TabIndex = 1;
             this.pnlRezReq.Click += new System.EventHandler(this.pnlRezReq_Click);
+            this.pnlRezReq.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlRezReq_Paint);
             // 
             // label2
             // 
@@ -98,7 +99,7 @@
             this.pnlMeetRooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(243)))));
             this.pnlMeetRooms.Controls.Add(this.label4);
             this.pnlMeetRooms.Location = new System.Drawing.Point(453, 175);
-            this.pnlMeetRooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMeetRooms.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMeetRooms.Name = "pnlMeetRooms";
             this.pnlMeetRooms.Size = new System.Drawing.Size(429, 153);
             this.pnlMeetRooms.TabIndex = 3;
@@ -121,7 +122,7 @@
             this.pnlLogData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(95)))), ((int)(((byte)(255)))));
             this.pnlLogData.Controls.Add(this.label3);
             this.pnlLogData.Location = new System.Drawing.Point(16, 175);
-            this.pnlLogData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlLogData.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLogData.Name = "pnlLogData";
             this.pnlLogData.Size = new System.Drawing.Size(429, 153);
             this.pnlLogData.TabIndex = 2;
@@ -143,7 +144,7 @@
             this.pnlExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(59)))), ((int)(((byte)(87)))));
             this.pnlExit.Controls.Add(this.label6);
             this.pnlExit.Location = new System.Drawing.Point(453, 335);
-            this.pnlExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlExit.Margin = new System.Windows.Forms.Padding(4);
             this.pnlExit.Name = "pnlExit";
             this.pnlExit.Size = new System.Drawing.Size(429, 153);
             this.pnlExit.TabIndex = 5;
@@ -165,7 +166,7 @@
             this.pnlSupport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(26)))));
             this.pnlSupport.Controls.Add(this.label5);
             this.pnlSupport.Location = new System.Drawing.Point(16, 335);
-            this.pnlSupport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSupport.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSupport.Name = "pnlSupport";
             this.pnlSupport.Size = new System.Drawing.Size(429, 153);
             this.pnlSupport.TabIndex = 4;
@@ -207,7 +208,7 @@
             this.Controls.Add(this.pnlLogData);
             this.Controls.Add(this.pnlRoomList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPanelForm";

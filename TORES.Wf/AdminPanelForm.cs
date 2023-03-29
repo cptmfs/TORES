@@ -76,5 +76,10 @@ namespace TORES.Wf
         {
 
         }
+
+        private void pnlRezReq_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
