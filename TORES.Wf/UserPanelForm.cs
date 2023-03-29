@@ -13,6 +13,7 @@ namespace TORES.Wf
     public partial class UserPanelForm : Form
     {
         public string userStatus = "user";
+        public int userid;
         
         public UserPanelForm()
         {
@@ -27,15 +28,24 @@ namespace TORES.Wf
         {
             MeetRoomForm mf = new MeetRoomForm();
             mf.userControl = userStatus;
+            mf.userId = userid; 
             mf.ShowDialog();
             
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ReservationRequestForm rs = new ReservationRequestForm();   
+            ReservationRequestForm rs = new ReservationRequestForm();  
+            rs.userId= userid;
             rs.ShowDialog();
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MyRequestForm rf = new MyRequestForm();
+            rf.id= userid;
+            rf.ShowDialog();
         }
     }
 }

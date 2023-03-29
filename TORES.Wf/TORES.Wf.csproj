@@ -70,6 +70,20 @@
     <Compile Include="MeetRoomForm.Designer.cs">
       <DependentUpon>MeetRoomForm.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="PendingRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingRequestForm.Designer.cs">
+      <DependentUpon>PendingRequestForm.cs</DependentUpon>
+	</Compile>
+    <Compile Include="MyRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyRequestForm.Designer.cs">
+      <DependentUpon>MyRequestForm.cs</DependentUpon>
+
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservationRequestForm.cs">
@@ -96,6 +110,13 @@
     <EmbeddedResource Include="MeetRoomForm.resx">
       <DependentUpon>MeetRoomForm.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="PendingRequestForm.resx">
+      <DependentUpon>PendingRequestForm.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="MyRequestForm.resx">
+      <DependentUpon>MyRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -105,6 +126,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Documents\CLICKUP_form_dizayn_kurallar.pdf" />
+    <None Include="Documents\TORES.v1.SRS.Draft.pdf" />
     <EmbeddedResource Include="ReservationRequestForm.resx">
       <DependentUpon>ReservationRequestForm.cs</DependentUpon>
     </EmbeddedResource>

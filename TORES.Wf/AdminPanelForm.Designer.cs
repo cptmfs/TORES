@@ -41,12 +41,15 @@
             this.pnlSupport = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lblusID = new System.Windows.Forms.Label();
+            this.pnlPendingRequest = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnlRoomList.SuspendLayout();
             this.pnlRezReq.SuspendLayout();
             this.pnlMeetRooms.SuspendLayout();
             this.pnlLogData.SuspendLayout();
             this.pnlExit.SuspendLayout();
             this.pnlSupport.SuspendLayout();
+            this.pnlPendingRequest.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRoomList
@@ -58,15 +61,14 @@
             this.pnlRoomList.Size = new System.Drawing.Size(322, 124);
             this.pnlRoomList.TabIndex = 0;
             this.pnlRoomList.Click += new System.EventHandler(this.pnlRoomList_Click_1);
-            this.pnlRoomList.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlRoomList_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(79, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 31);
+            this.label1.Size = new System.Drawing.Size(136, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Room List";
             // 
@@ -83,10 +85,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 31);
+            this.label2.Size = new System.Drawing.Size(269, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Reservation Request";
             // 
@@ -103,10 +105,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(80, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(178, 31);
+            this.label4.Size = new System.Drawing.Size(167, 31);
             this.label4.TabIndex = 2;
             this.label4.Text = "Meet Rooms";
             // 
@@ -114,7 +116,7 @@
             // 
             this.pnlLogData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(95)))), ((int)(((byte)(255)))));
             this.pnlLogData.Controls.Add(this.label3);
-            this.pnlLogData.Location = new System.Drawing.Point(12, 142);
+            this.pnlLogData.Location = new System.Drawing.Point(340, 272);
             this.pnlLogData.Name = "pnlLogData";
             this.pnlLogData.Size = new System.Drawing.Size(322, 124);
             this.pnlLogData.TabIndex = 2;
@@ -123,10 +125,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(85, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 31);
+            this.label3.Size = new System.Drawing.Size(124, 31);
             this.label3.TabIndex = 1;
             this.label3.Text = "Log Data";
             // 
@@ -134,9 +136,10 @@
             // 
             this.pnlExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(59)))), ((int)(((byte)(87)))));
             this.pnlExit.Controls.Add(this.label6);
-            this.pnlExit.Location = new System.Drawing.Point(340, 272);
+            this.pnlExit.Location = new System.Drawing.Point(15, 399);
+            this.pnlExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlExit.Name = "pnlExit";
-            this.pnlExit.Size = new System.Drawing.Size(322, 124);
+            this.pnlExit.Size = new System.Drawing.Size(647, 101);
             this.pnlExit.TabIndex = 5;
             this.pnlExit.Click += new System.EventHandler(this.pnlExit_Click);
             // 
@@ -144,7 +147,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(117, 47);
+            this.label6.Location = new System.Drawing.Point(292, 39);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 31);
             this.label6.TabIndex = 1;
@@ -163,10 +167,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(85, 47);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 31);
+            this.label5.Size = new System.Drawing.Size(109, 31);
             this.label5.TabIndex = 1;
             this.label5.Text = "Support";
             // 
@@ -180,12 +184,35 @@
             this.lblusID.TabIndex = 6;
             this.lblusID.Text = "label7";
             // 
+            // pnlPendingRequest
+            // 
+            this.pnlPendingRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(188)))), ((int)(((byte)(249)))));
+            this.pnlPendingRequest.Controls.Add(this.label7);
+            this.pnlPendingRequest.Location = new System.Drawing.Point(13, 143);
+            this.pnlPendingRequest.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlPendingRequest.Name = "pnlPendingRequest";
+            this.pnlPendingRequest.Size = new System.Drawing.Size(322, 124);
+            this.pnlPendingRequest.TabIndex = 8;
+            this.pnlPendingRequest.Click += new System.EventHandler(this.pnlPendingRequest_Click_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(39, 46);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(244, 31);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Pending Request";
+            // 
             // AdminPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(142)))), ((int)(((byte)(155)))));
-            this.ClientSize = new System.Drawing.Size(674, 405);
+            this.ClientSize = new System.Drawing.Size(674, 511);
+            this.Controls.Add(this.pnlPendingRequest);
             this.Controls.Add(this.lblusID);
             this.Controls.Add(this.pnlExit);
             this.Controls.Add(this.pnlSupport);
@@ -210,6 +237,8 @@
             this.pnlExit.PerformLayout();
             this.pnlSupport.ResumeLayout(false);
             this.pnlSupport.PerformLayout();
+            this.pnlPendingRequest.ResumeLayout(false);
+            this.pnlPendingRequest.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +259,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblusID;
+        private System.Windows.Forms.Panel pnlPendingRequest;
+        private System.Windows.Forms.Label label7;
     }
 }
