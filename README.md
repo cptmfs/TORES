@@ -1,4 +1,3 @@
-# TORES  Turkish 
 <h1>TORES - Toplantı Odaları Rezervasyon Sistemi</h1>
 
 <p>TORES, NOVAS şirketindeki 10 toplantı odasının özelliklerini ve uygunluk durumlarını takip etmek ve çalışanların kolayca toplantı rezervasyonları yapmalarını sağlamak için tasarlanmış bir otomasyon sistemidir.</p>
