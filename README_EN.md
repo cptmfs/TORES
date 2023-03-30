@@ -1,5 +1,3 @@
-# TORES - English
-
 <h1>TORES - Meeting Room Reservation System</h1>
 <p>TORES is an automation system designed to track the features and availability status of 10 meeting rooms in NOVAS company and enable employees to easily make meeting reservations.</p>
 <p>TORES is written in C# and runs on the Windows Form environment. The main aim of the project is to reduce the difficulties faced by employees when making reservations for meeting rooms and to make the process smoother.</p>
