@@ -286,6 +286,8 @@ namespace TORES.Wf
             MeetRoomForm mt = new MeetRoomForm();
             mt.userIdMR = userIdRR;
             mt.lastSelectedRoomIdMR = cbxRooms.SelectedIndex;
+            mt.nameS = nameSurname;
+            mt.depnameMR = depName;
             mt.Show();
             
         }

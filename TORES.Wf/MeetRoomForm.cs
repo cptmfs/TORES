@@ -19,6 +19,8 @@ namespace TORES.Wf
         public string userControl;
         public int userIdMR;
         public int lastSelectedRoomIdMR;
+        public string nameS;
+        public string depnameMR;
         public MeetRoomForm()
         {
             InitializeComponent();
@@ -105,6 +107,8 @@ namespace TORES.Wf
             res.lastSelectedRoomId = cbxMeetRoom.SelectedIndex;
             res.userIdRR = userIdMR;
             res.lastSelectedRoomId = cbxMeetRoom.SelectedIndex;
+            res.nameSurname = nameS;
+            res.depName = depnameMR;
             res.ShowDialog();
             this.Close();
         }
