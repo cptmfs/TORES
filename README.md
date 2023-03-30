@@ -48,14 +48,10 @@
   <li><a href="https://github.com/ozdenur">Login Panel Sorumlusu - Özdenur KOYUNCU</a></li>
 </ul>
 
-
-<img src="https://www.i.hizliresim.com/fl5tpnh.png" alt="Resim 1">
-<img src="https://www.hizliresim.com/s62p5av.png" alt="Resim 2">
-<img src="https://www.hizliresim.com/t97rxje.png" alt="Resim 3">
-<img src="https://www.hizliresim.com/t9dxhx7.png" alt="Resim 3">
-![alt text](https://github.com/[cptmfs]/[TORES]/blob/[main]/novas-logo.png?raw=true)
-
-
+![Resim1](https://user-images.githubusercontent.com/83764485/228959829-9dbce6cd-024a-4518-bcef-6481e1cd6ea2.png)
+![Resim2](https://user-images.githubusercontent.com/83764485/228959837-18413edb-5b96-4a09-8084-cda6132c0e7a.png)
+![Resim4](https://user-images.githubusercontent.com/83764485/228959847-ef758d28-45a7-4974-b035-a30a4af8ffe4.png)
+![tores-logo](https://user-images.githubusercontent.com/83764485/228959850-f3e0db22-1428-4b20-8a4f-1b75dbe221cd.png)
 
 
 
