@@ -64,7 +64,6 @@ namespace TORES.Wf
             connection.Close();
             MessageBox.Show($"Log Kaydı : {dgwLog.CurrentRow.Cells[0].Value} olan Log kaydını silmekten emin misiniz ? .", "Tüm kaydı Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             ListLog();
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
