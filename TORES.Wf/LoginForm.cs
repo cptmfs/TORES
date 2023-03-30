@@ -101,9 +101,8 @@ namespace TORES.Wf
         {
             string userName = txtUserName.Text;
             message = $"Error Message:{userName} Unauthorized login error";
-            SqlCommand cmd3 = new SqlCommand("Insert into datLog (LoginDT,LogoutDT,LogNotes) values (@loginDt,@logoutDt,@logNotes)", connection); 
-            cmd3.Parameters.AddWithValue("@loginDt", errorTime);
-            cmd3.Parameters.AddWithValue("@logoutDt", errorTime);
+            SqlCommand cmd3 = new SqlCommand("Insert into datLog (ErrorDT,LogNotes) values (@errorDT,@logNotes)", connection); 
+            cmd3.Parameters.AddWithValue("@errorDT", errorTime);
             cmd3.Parameters.AddWithValue("@logNotes", message);
             cmd3.ExecuteNonQuery(); // değişiklikleri veritabanına yansıt .. Kaydet gibi
             connection.Close();

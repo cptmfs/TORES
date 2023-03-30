@@ -33,7 +33,7 @@ namespace TORES.Wf
 
             DataRow newRow = dt.NewRow();
             newRow["RoomID"] = 0;
-            newRow["RoomName"] = "---Seçiniz---";
+            newRow["RoomName"] = "          Choose";
             dt.Rows.InsertAt(newRow, 0);
 
             cbxMeetRoom.DataSource = dt;

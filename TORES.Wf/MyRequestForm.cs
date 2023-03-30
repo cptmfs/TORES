@@ -62,9 +62,9 @@ namespace TORES.Wf
             {
 
 
-                int status = int.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
+                bool status = bool.Parse(dataGridView1.CurrentRow.Cells[7].Value.ToString());
 
-                if (status == 0)
+                if (status == false)
                 {
                     connection.Open();
                     SqlCommand cmd2 = new SqlCommand("Delete from datReservation where ResReqID=@ResReqID and ResStatus=0", connection);

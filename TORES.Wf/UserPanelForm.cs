@@ -54,7 +54,7 @@ namespace TORES.Wf
         {
             MyRequestForm rf = new MyRequestForm();
             rf.id= userIdUP;
-            rf.ShowDialog();
+            rf.Show();
         }
 
         private void UserPanelForm_Load(object sender, EventArgs e)
