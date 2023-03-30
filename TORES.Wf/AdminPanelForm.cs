@@ -30,9 +30,9 @@ namespace TORES.Wf
 
         private void pnlSupport_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(" ----  TORES  ----\r\n Novas Works Şirketi Toplantı Odaları Rezervasyon Sistemi.\r\nAdmin girişi için;\r\nKullanıcı Adı = Admin\r\n Şifre = Q1w2e3\r\nEmail = umit.karacivi@outlook.com","Support Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Hello,\r\n\r\nWelcome to the Novas Works Meeting Automation System! This automation system is designed to make planning and managing meetings in your company easier and more efficient.\r\n\r\nAfter logging in as an admin, you will see a message that includes important company information, as well as your username, password, and email address. Please ensure the accuracy of this information and only share it with those who need to know.\r\n\r\nBefore you start planning your meetings, please check your profile page and update any necessary information. You can also check out the 'Meeting Rooms' page to learn more about available rooms and their features.\r\n\r\nIf you have any questions or need assistance, please contact the Novas Works IT team. Contact information can be found at the bottom of the page.\r\n\r\nWe wish you a productive and successful meeting experience!\r\n\r\nBest regards,\r\n\r\nThe Novas Works Meeting Automation Team\r\nFor Admin Entry;\r\nUser Name = Admin\r\nPassword = Q1w2e3\r\nEmail = umit.karacivi@outlook.com", "Support Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
-
+        // 
         private void pnlMeetRooms_Click(object sender, EventArgs e)
         {
             //Toplantı Odası
@@ -77,6 +77,11 @@ namespace TORES.Wf
             //Bekleyen Rezervasyon istekleri açılacak
             PendingRequestForm pendingrequestForm = new PendingRequestForm();
             pendingrequestForm.ShowDialog();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

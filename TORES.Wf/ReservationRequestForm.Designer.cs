@@ -46,7 +46,7 @@
             this.cbxRooms = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
-            this.btnSaat = new System.Windows.Forms.Button();
+            this.btnShowHour = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -221,17 +221,18 @@
             this.lblId.Size = new System.Drawing.Size(35, 13);
             this.lblId.TabIndex = 34;
             this.lblId.Text = "label1";
+            this.lblId.Visible = false;
             // 
-            // btnSaat
+            // btnShowHour
             // 
-            this.btnSaat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaat.Location = new System.Drawing.Point(365, 204);
-            this.btnSaat.Name = "btnSaat";
-            this.btnSaat.Size = new System.Drawing.Size(173, 36);
-            this.btnSaat.TabIndex = 35;
-            this.btnSaat.Text = "Show Available Hours";
-            this.btnSaat.UseVisualStyleBackColor = true;
-            this.btnSaat.Click += new System.EventHandler(this.btnSaat_Click);
+            this.btnShowHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnShowHour.Location = new System.Drawing.Point(365, 204);
+            this.btnShowHour.Name = "btnShowHour";
+            this.btnShowHour.Size = new System.Drawing.Size(173, 36);
+            this.btnShowHour.TabIndex = 35;
+            this.btnShowHour.Text = "Show Available Hours";
+            this.btnShowHour.UseVisualStyleBackColor = true;
+            this.btnShowHour.Click += new System.EventHandler(this.btnShowHour_Click);
             // 
             // pictureBox1
             // 
@@ -250,7 +251,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(571, 561);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnSaat);
+            this.Controls.Add(this.btnShowHour);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnSendRequest);
             this.Controls.Add(this.lblDetailsOptional);
@@ -298,7 +299,7 @@
         private System.Windows.Forms.ComboBox cbxRooms;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Button btnSaat;
+        private System.Windows.Forms.Button btnShowHour;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -30,7 +30,6 @@
         {
             this.dgwLog = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnList = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -41,6 +40,8 @@
             // 
             this.dgwLog.AllowUserToAddRows = false;
             this.dgwLog.AllowUserToDeleteRows = false;
+            this.dgwLog.AllowUserToResizeColumns = false;
+            this.dgwLog.AllowUserToResizeRows = false;
             this.dgwLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwLog.Location = new System.Drawing.Point(12, 35);
@@ -62,19 +63,9 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tores Log Data";
             // 
-            // btnList
-            // 
-            this.btnList.Location = new System.Drawing.Point(12, 315);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(181, 41);
-            this.btnList.TabIndex = 2;
-            this.btnList.Text = "Show Logs";
-            this.btnList.UseVisualStyleBackColor = true;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
-            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(204, 315);
+            this.btnClear.Location = new System.Drawing.Point(12, 315);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(181, 41);
             this.btnClear.TabIndex = 3;
@@ -84,7 +75,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(397, 315);
+            this.btnDelete.Location = new System.Drawing.Point(305, 315);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(184, 41);
             this.btnDelete.TabIndex = 4;
@@ -94,7 +85,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnExit.Location = new System.Drawing.Point(588, 315);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(184, 41);
@@ -108,11 +99,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(782, 377);
+            this.ClientSize = new System.Drawing.Size(782, 366);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgwLog);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,7 +122,6 @@
 
         private System.Windows.Forms.DataGridView dgwLog;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnExit;

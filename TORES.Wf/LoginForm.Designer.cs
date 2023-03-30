@@ -40,12 +40,15 @@
             // txtTORES
             // 
             this.txtTORES.BackColor = System.Drawing.Color.LightGray;
+            this.txtTORES.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtTORES.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTORES.Location = new System.Drawing.Point(0, -1);
             this.txtTORES.Name = "txtTORES";
+            this.txtTORES.ReadOnly = true;
             this.txtTORES.Size = new System.Drawing.Size(516, 24);
             this.txtTORES.TabIndex = 24;
             this.txtTORES.Text = "TORES v1.0";
+            this.txtTORES.TextChanged += new System.EventHandler(this.txtTORES_TextChanged);
             // 
             // btnExıt
             // 

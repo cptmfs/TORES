@@ -32,27 +32,30 @@ namespace TORES.Wf
         {
             InitializeComponent();
         }
-
-        private void ReservationRequestForm_Load(object sender, EventArgs e)
+        private void ListHours()
         {
             #region cbxMeeting(Start/End)
 
             cbxMeetingStart.Items.Clear();
+            cbxMeetingEnd.Items.Clear();
 
             for (int i = 9; i <= 19; i++)   // cbxMeetingStart ve cbxMeetingEnd 09:00 - 18:00 arası dolduruldu
             {
                 cbxMeetingStart.Items.Add(i); //+ ":00"
-                
-                
+
+
 
                 cbxMeetingEnd.Items.Add(i); //+ ":00"
 
             }
-            cbxMeetingStart.DisplayMember = (cbxMeetingStart.Items).ToString() + ":00";
             cbxMeetingStart.SelectedIndex = 0;      // saatleri ilk indekste seçili
             cbxMeetingEnd.SelectedIndex = 0;
 
             #endregion
+        }
+        private void ReservationRequestForm_Load(object sender, EventArgs e)
+        {
+            ListHours();
 
             GetRooms(); // oda isimlerini cbxRooms'a çekti
 
@@ -99,12 +102,22 @@ namespace TORES.Wf
                             cbxRooms.DataSource = dSet.Tables[0];
                             cbxRooms.ValueMember = "RoomID";
                             cbxRooms.DisplayMember = "RoomName";
+                            
 
                         }
                     }
                 }
             }
             #endregion
+            try
+            {
+                cbxRooms.SelectedIndex = lastSelectedRoomId;
+
+            }
+            catch 
+            {
+
+            }
         }
 
         private void GetReservationInfo()
@@ -212,28 +225,53 @@ namespace TORES.Wf
         }
         private void btnSendRequest_Click(object sender, EventArgs e)
         {
-            // butona basıldığında admine oda rezervasyon isteği gönderilecek
-            using (SqlConnection con = new SqlConnection(conString))  // TORESDB bağlantı
-            {
-                vsSQLCommand = "Insert into datReservation (ResRoomID,ResStartDT,ResEndDT,ResUserID,ResDesc,ResStatus,ResMeetingDT) values (@resRoomId,@resStartDt,@resEndDt,@resUserId,@resDesc,@resStatus,@resMeetingDT)";
-                using (SqlCommand cmd2 = new SqlCommand(vsSQLCommand, con))
-                {
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.Parameters.AddWithValue("@resRoomId", cbxRooms.SelectedValue);
-                    cmd2.Parameters.AddWithValue("@resStartDt", cbxMeetingStart.SelectedItem);
-                    cmd2.Parameters.AddWithValue("@resEndDt", cbxMeetingEnd.SelectedItem);
-                    cmd2.Parameters.AddWithValue("@resUserId", userIdRR);
-                    cmd2.Parameters.AddWithValue("@resDesc", txtDetails.Text);
-                    cmd2.Parameters.AddWithValue("@resStatus", 0);
-                    cmd2.Parameters.AddWithValue("@resMeetingDT", dtpMeetingDate.Text);
-                    con.Open();
-                    cmd2.ExecuteNonQuery();
-                    MessageBox.Show("Rezervasyon isteği başarılı bir şekilde oluşturuldu. Admin onayı bekliyor.", "Reservation Request", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    con.Close();
+            #region Admine oda rezervasyon isteği gönderme
 
-                    this.Close();
+            if (cbxRooms.SelectedIndex < 1)
+            {
+                MessageBox.Show("Please select a room.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+            if (dtpMeetingDate.Value < DateTime.Now)
+            {
+                MessageBox.Show("Please select a valid date.");
+
+            }
+            if (int.Parse(cbxMeetingStart.Text) >= int.Parse(cbxMeetingEnd.Text))
+            {
+                MessageBox.Show("Please check your clock selection.");
+            }
+            else
+            {
+                // butona basıldığında admine oda rezervasyon isteği gönderilecek
+                using (SqlConnection con = new SqlConnection(conString))  // TORESDB bağlantı
+                {
+                    vsSQLCommand = "Insert into datReservation (ResRoomID,ResStartDT,ResEndDT,ResUserID,ResDesc,ResStatus,ResMeetingDT) values (@resRoomId,@resStartDt,@resEndDt,@resUserId,@resDesc,@resStatus,@resMeetingDT)";
+                    using (SqlCommand cmd2 = new SqlCommand(vsSQLCommand, con))
+                    {
+                        cmd2.CommandType = CommandType.Text;
+                        cmd2.Parameters.AddWithValue("@resRoomId", cbxRooms.SelectedValue);
+                        cmd2.Parameters.AddWithValue("@resStartDt", cbxMeetingStart.SelectedItem);
+                        cmd2.Parameters.AddWithValue("@resEndDt", cbxMeetingEnd.SelectedItem);
+                        cmd2.Parameters.AddWithValue("@resUserId", userIdRR);
+                        cmd2.Parameters.AddWithValue("@resDesc", txtDetails.Text);
+                        cmd2.Parameters.AddWithValue("@resStatus", 0);
+                        cmd2.Parameters.AddWithValue("@resMeetingDT", dtpMeetingDate.Text);
+                        con.Open();
+                        cmd2.ExecuteNonQuery();
+                        MessageBox.Show("Reservation request created successfully. Waiting for admin approval.", "Reservation Request", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.Close();
+                        this.Close();
+                    }
                 }
             }
+
+            #endregion
+
+
+
+
+            
 
         }
         public class Meeting
@@ -242,22 +280,23 @@ namespace TORES.Wf
             public int ResEndDT { get; set; }
         }
 
-
-        private void btnSaat_Click(object sender, EventArgs e)
-        {
-            //ReservationTimeControl();
-            rescontrol();
-            cbxMeetingStart.SelectedIndex = 0;
-            cbxMeetingEnd.SelectedIndex = 0;
-
-        }
-
         private void btnRoomFeatures_Click_1(object sender, EventArgs e)
         {
             // MeetRoomForm 'a yönlendirecek
             MeetRoomForm mt = new MeetRoomForm();
             mt.userIdMR = userIdRR;
+            mt.lastSelectedRoomIdMR = cbxRooms.SelectedIndex;
             mt.Show();
+            
+        }
+
+        private void btnShowHour_Click(object sender, EventArgs e)
+        {
+            //ReservationTimeControl();
+            ListHours(); // Eğer tarih değişirse combobox saatleri standrt hale döndürmek içindir..
+            rescontrol();
+            cbxMeetingStart.SelectedIndex = 0;
+            cbxMeetingEnd.SelectedIndex = 0;
             
         }
     }

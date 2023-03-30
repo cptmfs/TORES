@@ -46,24 +46,31 @@ namespace TORES.Wf
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            SqlCommand cmd2 = new SqlCommand("DELETE FROM datLog WHERE LogID=@LogID",connection);
-            cmd2.Parameters.AddWithValue("@LogID", dgwLog.CurrentRow.Cells[0].Value);
-            cmd2.ExecuteNonQuery();
-            connection.Close();
-            MessageBox.Show($"ID No : {dgwLog.CurrentRow.Cells[0].Value} olan Log Kaydı Veritabanından başarılı bir şekilde silinmiştir.","Log Kaydı Silme",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            ListLog();
+            DialogResult dialogResult = MessageBox.Show($"Do you really want to delete Log Record with ID No : {dgwLog.CurrentRow.Cells[0].Value} from Database?", "Transaction Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                connection.Open();
+                SqlCommand cmd2 = new SqlCommand("DELETE FROM datLog WHERE LogID=@LogID", connection);
+                cmd2.Parameters.AddWithValue("@LogID", dgwLog.CurrentRow.Cells[0].Value);
+                cmd2.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show($"The Log Record with ID No : {dgwLog.CurrentRow.Cells[0].Value} has been successfully deleted from the Database.", "Deleting Log", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ListLog();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            SqlCommand cmd2 = new SqlCommand("DELETE FROM datLog WHERE LogID=@LogID", connection);
-            cmd2.Parameters.AddWithValue("@LogID", dgwLog.CurrentRow.Cells[0].Value);
-            cmd2.ExecuteNonQuery();
-            connection.Close();
-            MessageBox.Show($"Log Kaydı : {dgwLog.CurrentRow.Cells[0].Value} olan Log Kaydı Veritabanından başarılı bir şekilde silinmiştir.", "Tüm kaydı Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            ListLog();
+            DialogResult dialogResult = MessageBox.Show("Do you really want to delete all the data in the database?", "Transaction Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                connection.Open();
+                SqlCommand cmd2 = new SqlCommand("DELETE FROM datLog", connection);
+                cmd2.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("\r\nAll records in the database have been deleted successfully.", "Deleting the entire record", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                ListLog();
+            }
 
         }
 

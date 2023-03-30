@@ -13,7 +13,6 @@ namespace TORES.Wf
 {
     public partial class MyRequestForm : Form
     {
-
         SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ToresDB;Integrated Security=True");
 
         public int id;
@@ -36,19 +35,15 @@ namespace TORES.Wf
             connection.Close();
         }
 
-
         private void MyRequestForm_Load(object sender, EventArgs e)
         {
             GridDoldur();
         }
 
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -57,11 +52,9 @@ namespace TORES.Wf
 
         private void IstekIptal()
         {
-            DialogResult dialogResult = MessageBox.Show("Toplantı isteğinizi iptal etmek istiyormusunuz ?", "İşlem Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Do you want to cancel your meeting request?", "Request Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-
-
                 bool status = bool.Parse(dataGridView1.CurrentRow.Cells[7].Value.ToString());
 
                 if (status == false)
@@ -71,12 +64,12 @@ namespace TORES.Wf
                     cmd2.Parameters.AddWithValue("@ResReqID", dataGridView1.CurrentRow.Cells[0].Value);
                     cmd2.ExecuteNonQuery();
                     connection.Close();
-                    MessageBox.Show("Seçtiğiniz Toplantı rezervasyonunuz iptal edilmiştir.");
+                    MessageBox.Show("Your selected meeting reservation has been cancelled.");
                     GridDoldur();
                 }
                 else
                 {
-                    MessageBox.Show("Onaylanmış bir toplantıyı iptal edemezsiniz. Lütfen Tekrar Kontrol Ediniz..","Hatalı Silme İşlemi",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("You cannot cancel a confirmed meeting. Please Check Again.", "Incorrect Deletion", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 GridDoldur();
             }
@@ -86,8 +79,8 @@ namespace TORES.Wf
         {
             ReservationRequestForm rs = new ReservationRequestForm();
             rs.userIdRR = id;
-            rs.ShowDialog();
-            this.Close();
+            rs.Show();
+            
 
         }
     }

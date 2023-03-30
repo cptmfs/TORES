@@ -45,6 +45,8 @@
             // 
             this.dgwOnayBekleyen.AllowUserToAddRows = false;
             this.dgwOnayBekleyen.AllowUserToDeleteRows = false;
+            this.dgwOnayBekleyen.AllowUserToResizeColumns = false;
+            this.dgwOnayBekleyen.AllowUserToResizeRows = false;
             this.dgwOnayBekleyen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwOnayBekleyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwOnayBekleyen.Location = new System.Drawing.Point(16, 40);
@@ -115,6 +117,8 @@
             // 
             this.dgwOnayVerilen.AllowUserToAddRows = false;
             this.dgwOnayVerilen.AllowUserToDeleteRows = false;
+            this.dgwOnayVerilen.AllowUserToResizeColumns = false;
+            this.dgwOnayVerilen.AllowUserToResizeRows = false;
             this.dgwOnayVerilen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwOnayVerilen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwOnayVerilen.Location = new System.Drawing.Point(16, 225);

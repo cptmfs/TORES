@@ -82,6 +82,10 @@ namespace TORES.Wf
             connection.Close();
         }
 
+        private void txtTORES_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void LogMsg()// SQL den aldığımız komutlar ile kullanıcı isimlerini parametrelere çevirerek veri tabanına işledik.
         {

@@ -18,6 +18,7 @@ namespace TORES.Wf
 
         public string userControl;
         public int userIdMR;
+        public int lastSelectedRoomIdMR;
         public MeetRoomForm()
         {
             InitializeComponent();
@@ -42,6 +43,15 @@ namespace TORES.Wf
 
 
             connection.Close();
+            try
+            {
+                cbxMeetRoom.SelectedIndex = lastSelectedRoomIdMR;
+
+            }
+            catch 
+            {
+
+            }
         }
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
@@ -94,6 +104,7 @@ namespace TORES.Wf
             ReservationRequestForm res = new ReservationRequestForm();
             res.lastSelectedRoomId = cbxMeetRoom.SelectedIndex;
             res.userIdRR = userIdMR;
+            res.lastSelectedRoomId = cbxMeetRoom.SelectedIndex;
             res.ShowDialog();
             this.Close();
         }
@@ -114,7 +125,7 @@ namespace TORES.Wf
             cmd3.Parameters.AddWithValue("@roomId",cbxMeetRoom.SelectedValue);
             cmd3.ExecuteNonQuery();
             connection.Close();
-            MessageBox.Show($"{cbxMeetRoom.Text} Toplantı Odasının Oda Özellikleri Başarılı Bir Şekilde Güncellenmiştir.","Oda Özellikleri Güncelleme",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+            MessageBox.Show($"{cbxMeetRoom.Text} \r\nRoom Features of the Meeting Room Have Been Successfully Updated.", "\r\nRoom Features Update", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
         }
         #region Database öncesi checkbox değişikliklerini Database'e aktarma kodları .. 
         //private void chckbProjection_CheckedChanged(object sender, EventArgs e)
