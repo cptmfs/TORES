@@ -34,13 +34,11 @@
   <li>Toplantı saatleri çakışmasını önler.</li>
 </ul>
 
-<img src="https://www.i.hizliresim.com/fl5tpnh.png" alt="Resim 1">
-<img src="https://www.hizliresim.com/s62p5av.png" alt="Resim 2">
-<img src="https://www.hizliresim.com/t97rxje.png" alt="Resim 3">
-<img src="https://www.hizliresim.com/t9dxhx7.png" alt="Resim 3">
-![alt text](https://github.com/[cptmfs]/[TORES]/blob/[main]/novas-logo.png?raw=true)
 
-
+![Resim1](https://user-images.githubusercontent.com/83764485/228959485-19b924b0-7c20-408c-b0fd-c14db381a084.png)
+![Resim2](https://user-images.githubusercontent.com/83764485/228959508-b3e6abd7-7270-4f07-b345-710fc68dfd0c.png)
+![Resim4](https://user-images.githubusercontent.com/83764485/228959517-db75aeab-b51c-4055-8cd6-807fbba1b20a.png)
+![tores-logo](https://user-images.githubusercontent.com/83764485/228959524-c44678a5-ffba-4642-902d-45564554ff9a.png)
 
 <p>TORES'in başarılı bir şekilde geliştirilmesinde emeği geçen yazılım ekibimize teşekkür ederim.</p>
 
