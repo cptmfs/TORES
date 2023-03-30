@@ -43,18 +43,18 @@
             this.dgwLog.AllowUserToDeleteRows = false;
             this.dgwLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwLog.Location = new System.Drawing.Point(12, 35);
+            this.dgwLog.Location = new System.Drawing.Point(47, 35);
             this.dgwLog.Name = "dgwLog";
             this.dgwLog.ReadOnly = true;
             this.dgwLog.RowHeadersVisible = false;
             this.dgwLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgwLog.Size = new System.Drawing.Size(760, 274);
+            this.dgwLog.Size = new System.Drawing.Size(802, 274);
             this.dgwLog.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 12);
+            this.label1.Location = new System.Drawing.Point(275, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 20);
             this.label1.TabIndex = 1;
@@ -62,9 +62,9 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(32, 315);
+            this.btnList.Location = new System.Drawing.Point(70, 327);
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(222, 41);
+            this.btnList.Size = new System.Drawing.Size(222, 29);
             this.btnList.TabIndex = 2;
             this.btnList.Text = "Kayıtları Göster";
             this.btnList.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(279, 315);
+            this.btnClear.Location = new System.Drawing.Point(311, 327);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(214, 41);
+            this.btnClear.Size = new System.Drawing.Size(214, 29);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Kayıt Sil";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(512, 315);
+            this.btnDelete.Location = new System.Drawing.Point(550, 327);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(184, 41);
+            this.btnDelete.Size = new System.Drawing.Size(184, 29);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Tümünü Temizle";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Location = new System.Drawing.Point(767, 354);
+            this.btnExit.Location = new System.Drawing.Point(767, 363);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(110, 35);
+            this.btnExit.Size = new System.Drawing.Size(110, 26);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Çıkış";
             this.btnExit.UseVisualStyleBackColor = true;
