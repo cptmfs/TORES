@@ -38,6 +38,8 @@
 <img src="https://www.hizliresim.com/s62p5av.png" alt="Resim 2">
 <img src="https://www.hizliresim.com/t97rxje.png" alt="Resim 3">
 <img src="https://www.hizliresim.com/t9dxhx7.png" alt="Resim 3">
+![alt text](https://github.com/[cptmfs]/[TORES]/blob/[main]/novas-logo.png?raw=true)
+
 
 
 <p>TORES'in başarılı bir şekilde geliştirilmesinde emeği geçen yazılım ekibimize teşekkür ederim.</p>
