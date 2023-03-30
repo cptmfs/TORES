@@ -34,7 +34,7 @@
   <li>Toplantı saatleri çakışmasını önler.</li>
 </ul>
 
-<img src="https://www.hizliresim.com/fl5tpnh.png" alt="Resim 1">
+<img src="https://www.i.hizliresim.com/fl5tpnh.png" alt="Resim 1">
 <img src="https://www.hizliresim.com/s62p5av.png" alt="Resim 2">
 <img src="https://www.hizliresim.com/t97rxje.png" alt="Resim 3">
 <img src="https://www.hizliresim.com/t9dxhx7.png" alt="Resim 3">
