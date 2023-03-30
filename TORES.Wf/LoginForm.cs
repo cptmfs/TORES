@@ -88,6 +88,7 @@ namespace TORES.Wf
             cmd2.Parameters.AddWithValue("@logoutDt", errorTime);
             cmd2.Parameters.AddWithValue("@logNotes", message);
             cmd2.ExecuteNonQuery(); // değişiklikleri veritabanına yansıt .. Kaydet gibi
+
         }
     }
 }
