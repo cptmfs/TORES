@@ -89,7 +89,7 @@
             this.txtUserName.BackColor = System.Drawing.Color.White;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUserName.Location = new System.Drawing.Point(218, 217);
-            this.txtUserName.MaxLength = 10;
+            this.txtUserName.MaxLength = 13;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(144, 26);
             this.txtUserName.TabIndex = 1;

@@ -34,10 +34,7 @@ namespace TORES.Wf
             MeetRoomForm mf = new MeetRoomForm();
             mf.userControl = userStatus;
             mf.userIdMR = userIdUP; 
-            
-            this.Hide();
             mf.Show();
-
         }
 
         private void button5_Click(object sender, EventArgs e)

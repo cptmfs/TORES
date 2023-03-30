@@ -33,15 +33,6 @@ namespace TORES.Wf
             InitializeComponent();
         }
 
-        private void btnRoomFeatures_Click(object sender, EventArgs e)
-        {
-            // MeetRoomForm 'a yönlendirecek
-            MeetRoomForm mt = new MeetRoomForm();
-            mt.Show();
-            this.Close();
-
-        }
-
         private void ReservationRequestForm_Load(object sender, EventArgs e)
         {
             #region cbxMeeting(Start/End)
@@ -249,8 +240,6 @@ namespace TORES.Wf
         {
             public int ResStartDT { get; set; }
             public int ResEndDT { get; set; }
-
-
         }
 
 
@@ -263,5 +252,13 @@ namespace TORES.Wf
 
         }
 
+        private void btnRoomFeatures_Click_1(object sender, EventArgs e)
+        {
+            // MeetRoomForm 'a yönlendirecek
+            MeetRoomForm mt = new MeetRoomForm();
+            mt.userIdMR = userIdRR;
+            mt.Show();
+            
+        }
     }
 }

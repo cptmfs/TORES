@@ -155,7 +155,7 @@
             // 
             this.lblUserInfo.AutoSize = true;
             this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUserInfo.Location = new System.Drawing.Point(164, 9);
+            this.lblUserInfo.Location = new System.Drawing.Point(139, 9);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(222, 16);
             this.lblUserInfo.TabIndex = 23;
@@ -180,6 +180,7 @@
             this.btnRoomFeatures.TabIndex = 21;
             this.btnRoomFeatures.Text = "Room Features";
             this.btnRoomFeatures.UseVisualStyleBackColor = true;
+            this.btnRoomFeatures.Click += new System.EventHandler(this.btnRoomFeatures_Click_1);
             // 
             // lblRooms
             // 
@@ -220,7 +221,6 @@
             this.lblId.Size = new System.Drawing.Size(35, 13);
             this.lblId.TabIndex = 34;
             this.lblId.Text = "label1";
-            this.lblId.Visible = false;
             // 
             // btnSaat
             // 

@@ -53,7 +53,7 @@ namespace TORES.Wf
             RoomLoad();
 
 
-            if (userControl == "user")
+            if (userControl == "user" || userIdMR!=1)
             {
                 gbxRoomSpec.Enabled = false;
                 nudRoomCapacity.Enabled = false;
@@ -61,7 +61,6 @@ namespace TORES.Wf
                 checkedListBox1.Visible = false;
                 btnUpdate.Enabled = false;
             }
-            checkedListBox1.Visible = false;
 
         }
 
