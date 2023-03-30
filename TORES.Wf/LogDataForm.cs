@@ -62,7 +62,7 @@ namespace TORES.Wf
             cmd2.Parameters.AddWithValue("@LogID", dgwLog.CurrentRow.Cells[0].Value);
             cmd2.ExecuteNonQuery();
             connection.Close();
-            MessageBox.Show($"Log Kaydı : {dgwLog.CurrentRow.Cells[0].Value} olan Log Kaydı Veritabanından başarılı bir şekilde silinmiştir.", "Tüm kaydı Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            MessageBox.Show($"Log Kaydı : {dgwLog.CurrentRow.Cells[0].Value} olan Log kaydını silmekten emin misiniz ? .", "Tüm kaydı Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             ListLog();
 
         }
