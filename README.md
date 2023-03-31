@@ -2,9 +2,6 @@
 
 <p>TORES, NOVAS şirketindeki 10 toplantı odasının özelliklerini ve uygunluk durumlarını takip etmek ve çalışanların kolayca toplantı rezervasyonları yapmalarını sağlamak için tasarlanmış bir otomasyon sistemidir.</p>
 
-<p>TORES, NOVAS şirketindeki 10 toplantı odasının özelliklerini ve uygunluk durumlarını takip etmek ve çalışanların kolayca toplantı rezervasyonları yapmalarını sağlamak için tasarlanmış bir otomasyon sistemidir.</p>
-<p>TORES, NOVAS şirketindeki 10 toplantı odasının özelliklerini ve uygunluk durumlarını takip etmek ve çalışanların kolayca toplantı rezervasyonları yapmalarını sağlamak için tasarlanmış bir otomasyon sistemidir.</p>
-
 <p>TORES, C# dilinde yazılmıştır ve Windows Form ortamında çalışır. Projenin temel amacı, çalışanların toplantı odaları için rezervasyon yaparken karşılaştıkları zorlukları azaltmak ve süreci daha akıcı hale getirmektir.</p>
 
 <p>TORES Projesinde veri tabanı olarak Sql Server kullanılmıştır.</p>

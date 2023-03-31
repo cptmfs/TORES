@@ -22,6 +22,7 @@ namespace TORES.Wf
       
         DateTime loginTime, errorTime, logoutTime; // burada giriş/çıkı,hata günlerini tanımladık.
         string message;
+        string username , password;
         private void btnExıt_Click_1(object sender, EventArgs e)
         {
             logoutTime = DateTime.Now;
@@ -38,8 +39,8 @@ namespace TORES.Wf
         private void btnSıgnIn_Click_1(object sender, EventArgs e) //btnSignIn_Click
         {
             connection.Open();
-            string username = txtUserName.Text;
-            string password = txtUserPass.Text;
+             username = txtUserName.Text;
+             password = txtUserPass.Text;
             SqlCommand cmd = new SqlCommand("Select UserID,UserName,UserPass,p.DeptName,FName+' '+LName as Name From datUser d inner join prmDepartment p on p.DeptID=d.DeptID where UserName=@userName and UserPass=@userPass", connection); // SQL komut vererek verileri birbirlerini bağladık
             cmd.Parameters.AddWithValue("@userName", username);
             cmd.Parameters.AddWithValue("@userPass", password);
