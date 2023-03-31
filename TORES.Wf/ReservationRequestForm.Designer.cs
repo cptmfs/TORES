@@ -100,6 +100,7 @@
             this.cbxMeetingEnd.Name = "cbxMeetingEnd";
             this.cbxMeetingEnd.Size = new System.Drawing.Size(173, 28);
             this.cbxMeetingEnd.TabIndex = 29;
+            this.cbxMeetingEnd.Visible = false;
             // 
             // cbxMeetingStart
             // 
@@ -110,6 +111,7 @@
             this.cbxMeetingStart.Name = "cbxMeetingStart";
             this.cbxMeetingStart.Size = new System.Drawing.Size(175, 28);
             this.cbxMeetingStart.TabIndex = 28;
+            this.cbxMeetingStart.Visible = false;
             // 
             // lblStartEnd
             // 
@@ -120,6 +122,7 @@
             this.lblStartEnd.Size = new System.Drawing.Size(85, 20);
             this.lblStartEnd.TabIndex = 27;
             this.lblStartEnd.Text = "Start / End";
+            this.lblStartEnd.Visible = false;
             // 
             // dtpMeetingDate
             // 
@@ -130,6 +133,7 @@
             this.dtpMeetingDate.Name = "dtpMeetingDate";
             this.dtpMeetingDate.Size = new System.Drawing.Size(396, 26);
             this.dtpMeetingDate.TabIndex = 26;
+            this.dtpMeetingDate.Value = new System.DateTime(2023, 3, 31, 9, 9, 21, 0);
             // 
             // lblDate
             // 

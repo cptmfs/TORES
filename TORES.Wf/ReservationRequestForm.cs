@@ -14,20 +14,15 @@ namespace TORES.Wf
 {
     public partial class ReservationRequestForm : Form
     {
-
         public int userIdRR; // userId değişkeninini login sayfasından  giriş yapan kullanıcıdan alacağız..
         public string depName;
         public string nameSurname;
         // SQL Bağlantı
         string conString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ToresDB;Integrated Security=True";
         string vsSQLCommand = "";
-        string vsSQLQuery = "";
-
 
         public int lastSelectedRoomId;
         SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ToresDB;Integrated Security=True");
-
-
         public ReservationRequestForm()
         {
             InitializeComponent();
@@ -39,13 +34,13 @@ namespace TORES.Wf
             cbxMeetingStart.Items.Clear();
             cbxMeetingEnd.Items.Clear();
 
-            for (int i = 9; i <= 19; i++)   // cbxMeetingStart ve cbxMeetingEnd 09:00 - 18:00 arası dolduruldu
+            for (int i = 9; i < 19; i++)   // cbxMeetingStart ve cbxMeetingEnd 09:00 - 18:00 arası dolduruldu
             {
                 cbxMeetingStart.Items.Add(i); //+ ":00"
 
 
 
-                cbxMeetingEnd.Items.Add(i); //+ ":00"
+                cbxMeetingEnd.Items.Add(i+1); //+ ":00"
 
             }
             cbxMeetingStart.SelectedIndex = 0;      // saatleri ilk indekste seçili
@@ -60,23 +55,9 @@ namespace TORES.Wf
             GetRooms(); // oda isimlerini cbxRooms'a çekti
 
             GetReservationInfo(); // server'dan rezervasyon bilgilerini çekti
-
-
-            // Kullanıcıya göre lblUserInfo Ad Soyad - Departman olarak değişecek
-            // oda isimlerine göre rezerve edilen tarihler çekilecek - db den
-            // tarih bilgisi girilecek bu bilgilere göre db ki tablo çekilecek (dbo.dtReservation)
-            // yeni girilen ve önceden kayıtlı olan bilgiler kıyaslanacak
-            // uygun saatler comboda gösterilecek ? 
-
-
-
-
             lblUserInfo.Text = nameSurname + " / " + depName;
             lblId.Text = userIdRR.ToString();
-
         }
-
-
         private void GetRooms()
         {
             #region cbxRooms a TORESDB den Oda isimlerini ekleme 
@@ -93,7 +74,6 @@ namespace TORES.Wf
                         {
                             sda.Fill(dSet);
 
-
                             DataRow newRow = dSet.Tables[0].NewRow(); // birinci indekste "Seçiniz" eklendi ve seçili
                             newRow["RoomID"] = 0;
                             newRow["RoomName"] = "                   Choose   ";
@@ -101,9 +81,7 @@ namespace TORES.Wf
 
                             cbxRooms.DataSource = dSet.Tables[0];
                             cbxRooms.ValueMember = "RoomID";
-                            cbxRooms.DisplayMember = "RoomName";
-                            
-
+                            cbxRooms.DisplayMember = "RoomName";                           
                         }
                     }
                 }
@@ -144,51 +122,9 @@ namespace TORES.Wf
             }
 
         }
-
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ReservationTimeControl()
-        {
-            List<Meeting> meetingHourList = new List<Meeting>();
-            connection.Open();
-            SqlCommand cmd = new SqlCommand("Select ResStartDT,ResEndDT From datReservation where ResRoomID=@roomId and ResMeetingDT=@meetDt and ResStatus=1", connection);
-            cmd.Parameters.AddWithValue("@roomId", cbxRooms.SelectedValue);
-            cmd.Parameters.AddWithValue("@meetDt", dtpMeetingDate.Text);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                Meeting meeting = new Meeting();
-                meeting.ResStartDT = (int)dr["ResStartDT"];
-                meeting.ResEndDT = (int)dr["ResEndDT"];
-                meetingHourList.Add(meeting);
-            }
-            dr.Close();
-            connection.Close();
-
-            foreach (var item in meetingHourList)
-            {
-                for (int i = item.ResStartDT; i < item.ResEndDT; i++)
-                {
-                    var startTime = cbxMeetingStart.Items.Cast<int>().SingleOrDefault(x => x == i);
-                    if (startTime != null)
-                    {
-                        cbxMeetingStart.Items.Remove(startTime);
-                    }
-                }
-                for (int i = item.ResStartDT; i < item.ResEndDT + 1; i++)
-                {
-                    var endTime = cbxMeetingEnd.Items.Cast<int>().SingleOrDefault(y => y == i);
-
-                    if (endTime != null)
-                    {
-                        cbxMeetingEnd.Items.Remove(endTime);
-                    }
-                }
-
-            }
         }
         private void rescontrol()
         {
@@ -207,7 +143,6 @@ namespace TORES.Wf
                     if (cbxMeetingStart.Items.Contains(j))
                     {
                         cbxMeetingStart.Items.Remove(j);
-
                     }
                 }
                 for (int k = basSaat; k <= sonSaat; k++)
@@ -216,9 +151,7 @@ namespace TORES.Wf
                     {
                         cbxMeetingEnd.Items.Remove(k);
                     }
-
                 }
-
             }
             dr3.Close();
             connection.Close();
@@ -232,7 +165,7 @@ namespace TORES.Wf
                 MessageBox.Show("Please select a room.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
-            if (dtpMeetingDate.Value < DateTime.Now)
+            if (dtpMeetingDate.Value <= DateTime.UtcNow) // Novas Şirketi Estonya kuruluşlu olduğu için UTC..
             {
                 MessageBox.Show("Please select a valid date.");
 
@@ -266,18 +199,7 @@ namespace TORES.Wf
                 }
             }
 
-            #endregion
-
-
-
-
-            
-
-        }
-        public class Meeting
-        {
-            public int ResStartDT { get; set; }
-            public int ResEndDT { get; set; }
+            #endregion   
         }
 
         private void btnRoomFeatures_Click_1(object sender, EventArgs e)
@@ -294,6 +216,21 @@ namespace TORES.Wf
 
         private void btnShowHour_Click(object sender, EventArgs e)
         {
+            if (cbxRooms.SelectedIndex > 0)
+            {
+                if (cbxMeetingStart.Visible == false || cbxMeetingEnd.Visible == false || lblStartEnd.Visible == false)
+                {
+                    cbxMeetingStart.Visible = true;
+                    cbxMeetingEnd.Visible = true;
+                    lblStartEnd.Visible = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Choose Room", "Show Available Hours Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
             //ReservationTimeControl();
             ListHours(); // Eğer tarih değişirse combobox saatleri standrt hale döndürmek içindir..
             rescontrol();
@@ -301,5 +238,54 @@ namespace TORES.Wf
             cbxMeetingEnd.SelectedIndex = 0;
             
         }
+
+        #region ReservationTimeControl
+        //private void ReservationTimeControl()
+        //{
+        //    List<Meeting> meetingHourList = new List<Meeting>();
+        //    connection.Open();
+        //    SqlCommand cmd = new SqlCommand("Select ResStartDT,ResEndDT From datReservation where ResRoomID=@roomId and ResMeetingDT=@meetDt and ResStatus=1", connection);
+        //    cmd.Parameters.AddWithValue("@roomId", cbxRooms.SelectedValue);
+        //    cmd.Parameters.AddWithValue("@meetDt", dtpMeetingDate.Text);
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    while (dr.Read())
+        //    {
+        //        Meeting meeting = new Meeting();
+        //        meeting.ResStartDT = (int)dr["ResStartDT"];
+        //        meeting.ResEndDT = (int)dr["ResEndDT"];
+        //        meetingHourList.Add(meeting);
+        //    }
+        //    dr.Close();
+        //    connection.Close();
+
+        //    foreach (var item in meetingHourList)
+        //    {
+        //        for (int i = item.ResStartDT; i < item.ResEndDT; i++)
+        //        {
+        //            var startTime = cbxMeetingStart.Items.Cast<int>().SingleOrDefault(x => x == i);
+        //            if (startTime != null)
+        //            {
+        //                cbxMeetingStart.Items.Remove(startTime);
+        //            }
+        //        }
+        //        for (int i = item.ResStartDT; i < item.ResEndDT + 1; i++)
+        //        {
+        //            var endTime = cbxMeetingEnd.Items.Cast<int>().SingleOrDefault(y => y == i);
+
+        //            if (endTime != null)
+        //            {
+        //                cbxMeetingEnd.Items.Remove(endTime);
+        //            }
+        //        }
+
+        //    }
+        //}
+        //public class Meeting
+        //{
+        //    public int ResStartDT { get; set; }
+        //    public int ResEndDT { get; set; }
+        //}
+        #endregion
+
     }
 }
