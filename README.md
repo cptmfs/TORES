@@ -2,9 +2,6 @@
 
 <p>TORES, NOVAS şirketindeki 10 toplantı odasının özelliklerini ve uygunluk durumlarını takip etmek ve çalışanların kolayca toplantı rezervasyonları yapmalarını sağlamak için tasarlanmış bir otomasyon sistemidir.</p>
 
-<p>TORES, NOVAS şirketindeki 10 toplantı odasının özelliklerini ve uygunluk durumlarını takip etmek ve çalışanların kolayca toplantı rezervasyonları yapmalarını sağlamak için tasarlanmış bir otomasyon sistemidir.</p>
-<p>TORES, NOVAS şirketindeki 10 toplantı odasının özelliklerini ve uygunluk durumlarını takip etmek ve çalışanların kolayca toplantı rezervasyonları yapmalarını sağlamak için tasarlanmış bir otomasyon sistemidir.</p>
-
 <p>TORES, C# dilinde yazılmıştır ve Windows Form ortamında çalışır. Projenin temel amacı, çalışanların toplantı odaları için rezervasyon yaparken karşılaştıkları zorlukları azaltmak ve süreci daha akıcı hale getirmektir.</p>
 
 <p>TORES Projesinde veri tabanı olarak Sql Server kullanılmıştır.</p>
@@ -39,11 +36,11 @@
 
 <ul>
   <li><a href="https://github.com/cptmfs">Takım Lideri - Muhammed Ferit ŞİMŞEK</a></li>
+    <li><a href="https://github.com/OzcanKaraa">Log Kayıtları Paneli Sorumlusu - Özcan KARA</a></li>
   <li><a href="https://github.com/Aleyna7">Admin Paneli Sorumlusu - Aleyna ÖZ</a></li>
   <li><a href="https://github.com/IlkerKaplan">Kullanıcı Paneli Sorumlusu - İlker KAPLAN</a></li>
   <li><a href="https://github.com/NrgsK">Rezervasyon İstek Paneli Sorumlusu - Nergis KETENCİ</a></li>
   <li><a href="https://github.com/Nesibe93">Toplantı Odaları Paneli Sorumlusu - Nesibe KOSANOĞLU</a></li>
-  <li><a href="https://github.com/OzcanKaraa">Log Kayıtları Paneli Sorumlusu - Özcan KARA</a></li>
   <li><a href="https://github.com/ozdenur">Login Panel Sorumlusu - Özdenur KOYUNCU</a></li>
 </ul>
 
