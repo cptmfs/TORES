@@ -162,18 +162,18 @@ namespace TORES.Wf
 
             if (cbxRooms.SelectedIndex < 1)
             {
-                MessageBox.Show("Please select a room.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Please select a room.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (dtpMeetingDate.Value <= DateTime.UtcNow) // Novas Şirketi Estonya kuruluşlu olduğu için UTC..
+            else if (dtpMeetingDate.Value <= DateTime.UtcNow) // Novas Şirketi Estonya kuruluşlu olduğu için UTC..
             {
                 MessageBox.Show("Please select a valid date.");
 
             }
-            if (int.Parse(cbxMeetingStart.Text) >= int.Parse(cbxMeetingEnd.Text))
+            else if (int.Parse(cbxMeetingStart.Text) >= int.Parse(cbxMeetingEnd.Text))
             {
                 MessageBox.Show("Please check your clock selection.");
-            }
+            }       
             else
             {
                 // butona basıldığında admine oda rezervasyon isteği gönderilecek
